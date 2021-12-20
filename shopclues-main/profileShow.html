@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        *{
+            font-family: 'Roboto', sans-serif;
+        }        
+        body{
+            background-image: url("https://i.ibb.co/0Mb7Qjx/shopclues2.jpg");
+            backdrop-filter: blur(5px);
+            background-size: cover;
+            background-repeat: no-repeat; 
+            color:#1A237E;          
+        }
+        #containData{
+            width:700px;
+            height:530px;
+            border:1px solid #f7f4f4;
+            margin:auto;
+            background-color: #fcf9f9;
+            border-radius:10px;
+
+        }
+        #imgProf{
+            width:100%;
+            height:70%;
+            border-radius:5px;
+        }
+        #homebtn{
+            background-color: #FF5722;
+            color:white;
+            border:1px solid #FF5722;
+            font-weight: bolder;
+            font-size:smaller;
+            width:180px;
+            padding:1%;
+            border-radius: 5px;            
+        }
+        #wlcome{
+            color:rgb(107, 55, 55) ;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="wlcome"></h2>
+    <div id="containData">
+        <img id="imgProf"></img>
+        <p id="usernameProf"></p>
+        <p id="phoneProf"></p>
+        <p id="emailProf"></p>
+        <p id="addressProf"></p>
+    </div>     
+<a href="frontpage.html"><button id="homebtn">GO TO HOME PAGE</button></a>     
+
+  
+    <script>
+    let profileData=JSON.parse(localStorage.getItem("activeUser"));
+      
+    let wlcmMsg=document.getElementById("wlcome");
+    wlcmMsg.textContent="Welcome" +" " +profileData[0].username;
+
+      
+    let image=document.getElementById("imgProf");
+    image.src=profileData[0].Imageaddress;
+
+    let usernameprof=document.getElementById("usernameProf");
+    usernameprof.textContent="Name: "+" "+profileData[0].username;
+
+    let phoneprof=document.getElementById("phoneProf");
+    phoneprof.textContent="Phone Number: "+" "+profileData[0].Phone;
+    
+    let emailprof=document.getElementById("emailProf");
+    emailprof.textContent="Email Id: "+" "+profileData[0].Email;
+    
+    let addressprof=document.getElementById("addressProf");
+    addressprof.textContent="Address: "+" "+profileData[0].address;    
+    </script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckOut</title>
+    <style>
+    body{
+        background-color:skyblue;
+        }
+    #checkOutData{
+      display:grid;
+      grid-template-columns: 23% 23% 23% 23%;
+      gap:2%;
+    } 
+    #chkoutmainContain{
+        display:flex;
+        color:greenyellow;
+        font-size: large;
+        font-weight: bolder;
+    }       
+    #chkoutcontain1{
+         width:50%;
+    }
+    #chkoutcontain2{
+         width:50%;
+    }    
+    .divParent{
+        background-color: white;
+        margin-bottom: 30px;
+        padding: 30px;
+    }
+    #checkOutData > div:hover{
+        border: 2px solid #24A3B5;
+    }
+    img{
+        width:150px;
+        height:150px;
+        margin: auto;
+        }
+    #confirmOrd{
+        background-color: white;
+        border:1px solid #FF5722;
+        color:#FF5722;
+        font-weight: bolder;
+       font-size:smaller;
+       width:150px;
+       padding:1%;
+       border-radius: 5px;   
+       margin-left: 75%; 
+       margin-bottom: 2%;  
+    }    
+    #chkout{
+        color: rgb(107, 55, 55);
+        text-align: center;
+    }     
+    #totalPrice{
+        text-align: right;
+        color: black;
+    }
+    </style>
+</head>
+<body>
+    <h2 id="chkout"></h2>
+    <div id="chkoutmainContain">
+    <div id="chkoutcontain1">
+    <h3 style="color:black;">Payment Details:</h3>
+    <input placeholder="Enter Card Number" id="cardnum"/>
+    <input placeholder="expiry Date" id="carddate"/>
+    <input placeholder="CVV" id="cvv"/> 
+    <h3 style="color:black;">Address Details:</h3>
+    <div id="addres"style="color:black;"></div>
+    </div> 
+    <div id="chkoutcontain2">
+    <h3 id="totalPrice">Total Payable Price</h3>
+    <button id="confirmOrd" onclick="transfer()">Confirm Order</button>  
+    </div>
+    </div>
+    <div id="checkOutData"></div>
+
+    <script>
+        if(localStorage.getItem("activeUser")==null){
+        localStorage.setItem("activeUser",JSON.stringify([]));
+    }
+    var presentUser=JSON.parse(localStorage.getItem("activeUser"));
+    if(presentUser.length==0){
+        window.location.open("signIn.html");
+    }
+    else if(presentUser[0].username==null){
+        window.location.open("profileinput.html");
+    }
+   else{
+    let dataFromCart=JSON.parse(localStorage.getItem("cart"));
+    let dataFromActiveUser=JSON.parse(localStorage.getItem("activeUser"));
+
+    let addres=document.getElementById("addres");
+    addres.textContent=dataFromActiveUser[0].address;
+     
+    let parentCont=document.getElementById("chkoutmainContain");
+
+    let chkout=document.getElementById("chkout"); 
+    chkout.textContent= dataFromActiveUser[0].username+"'s "+"checkout";  
+    
+    let mainParent=document.getElementById("checkOutData");
+
+    function showFinalData(el){
+    let sumFinal=0;
+    mainParent.innerHTML="";
+      el.forEach(function(product){
+          
+        let parent= document.createElement("div");
+        parent.setAttribute("class","divParent");
+        mainParent.append(parent);
+
+        let prod_img = document.createElement("img");
+        prod_img.src=product.img;
+        parent.append(prod_img);
+
+        let prod_name= document.createElement("p");
+        prod_name.textContent=product.name;
+        parent.append(prod_name);
+
+        let prod_price= document.createElement("p");
+        prod_price.textContent="₹"+product.mrp;
+        parent.append(prod_price);
+
+        let prod_count= document.createElement("p");
+        prod_count.textContent="Quantity: "+product.count;
+        parent.append(prod_count);
+
+
+
+        sumFinal+=(Number(product.count)*Number(product.mrp));
+      })
+let finalTotal=document.getElementById("totalPrice");
+    finalTotal.textContent+="- ₹"+sumFinal;  
+ 
+    }
+    showFinalData(dataFromCart);
+
+
+
+    function transfer(){// to trandfer data from cart to myorders and empty cart;
+ 
+    var cardnum=document.getElementById("cardnum");
+    var carddate=document.getElementById("carddate");
+    var cardcvv=document.getElementById("cvv");
+        
+    if(localStorage.getItem("myOrders")===null){
+            localStorage.setItem("myOrders",JSON.stringify([]));
+        }
+        let myOrders=JSON.parse(localStorage.getItem("myOrders"));     
+
+      if(cardnum.value!=""&&carddate.value!==""&&cardcvv.value!=""){
+
+
+
+     for(var i=0;i<dataFromCart.length;i++){
+
+             let datainmyOrder={
+                 img:dataFromCart[i].img,
+                 name:dataFromCart[i].name,
+                 price:dataFromCart[i].mrp,
+             }
+
+             myOrders.push(datainmyOrder);
+            
+             localStorage.setItem("myOrders",JSON.stringify(myOrders));
+            }
+       localStorage.setItem("cart","[]");
+       checkOutData.textContent="";
+       parentCont.innerHTML="";
+       window.location.href="frontpage.html";
+      }
+      else{
+          alert("Enter all details");
+      }
+    }     
+    
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        *{
+            font-family: 'Roboto', sans-serif;
+        }        
+ 
+
+        #containData{
+            width:700px;
+            height:500px;
+            border:1px solid #f7f4f4;
+            margin:auto;
+            background-color: #fcf9f9;
+            border-radius:10px;
+        }
+        #myForm{
+        margin:10%;
+        display:grid;
+        grid-template-columns: auto;
+        gap:40%;
+        }
+        #sbt1{
+       background-color: #FF5722;
+       color:white;
+       border:1px solid #FF5722;
+       font-weight: bolder;
+       font-size:smaller;
+       width:150px;
+       padding:1%;
+       border-radius: 5px;
+       margin-top: 5%;
+       margin-left: 37%;
+       margin-right: 2%;
+    }   
+        #profbtn{
+        background-color: #FF5722;
+        border:1px solid #FF5722;
+        color:white;
+        font-weight: bolder;
+       font-size:smaller;
+       width:150px;
+       padding:1%;
+       border-radius: 5px;   
+       margin-left: 85%;   
+    }      
+    body{
+            background-image: url("https://i.ibb.co/0Mb7Qjx/shopclues2.jpg");
+            backdrop-filter: blur(5px);
+            background-size: contain;
+            background-repeat: no-repeat;         
+        }   
+        h3{
+            color: rgb(107, 55, 55);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h3>WELCOME TO PROFILE</h3>
+    <div id="containData">
+        <form onsubmit="add(event)" id="myForm">   
+            <input type ="text" id="pass" placeholder="Enter your Password"/>            
+            <input type ="text" id="name" placeholder="Enter Username"/>
+            <input type ="text" id="address" placeholder="Enter Address"/>     
+            <input type ="text" id="imgaddress" placeholder="Enter Image Link"/>                 
+            <input type ="submit" id="sbt1"/>
+            </form>            
+    </div>
+    <a href="profileShow.html"><button id= "profbtn"> Go To Profile Page</button></a> 
+
+<script>
+  function add(e){  
+    e.preventDefault();
+
+    let myForm=document.getElementById("myForm");
+
+    let password=myForm.pass.value;
+    let name =myForm.name.value;
+    let address=myForm.address.value;   
+    let imgaddress=myForm.imgaddress.value; 
+
+    let newActiveData=JSON.parse(localStorage.getItem("activeUser"));
+for(var i=0;i<newActiveData.length;i++){
+if(password==newActiveData[i].Password){
+if(name!=""&&address!=""){    
+    newActiveData[i]["username"]=name;
+    newActiveData[i]["address"]=address; 
+    newActiveData[i]["Imageaddress"]=imgaddress;     
+}
+else{
+    alert("Please complete all fields");
+}
+}
+else {
+    alert("Incorrect Password");
+}
+}
+     localStorage.setItem("activeUser",JSON.stringify(newActiveData));     
+  }     
+</script>
+
+</body>
+</html>

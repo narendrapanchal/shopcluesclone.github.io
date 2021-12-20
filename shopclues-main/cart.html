@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title><style>
+     #containData{
+        width:90%;
+        margin:auto;
+        padding:2%;
+        margin-top:2%;
+        display:flex;
+        flex-direction: column;
+    }
+
+    #containData > div{
+        background-color: white;
+        margin-bottom: 30px;
+        display: flex;
+      padding: 30px;
+    }
+    #containData > div >div{
+        margin-left: 7%;
+        margin-right: 7%;
+        justify-content:center ;
+    }
+    #containData > div >div >p {
+        width: 300px;
+    }
+    #containData > div:hover{
+        border: 2px solid #24A3B5;
+    }
+    body{
+        background-color: skyblue;
+    }
+    img{
+            width:200px;
+            height:200px;
+            margin: auto;
+        }
+    #totalprice{
+        text-align: center;
+    }
+    h2{
+        text-align: center;
+        background-color:#24A3B5 ;
+        padding: 20px;
+        color: blue;
+    }
+    a{
+        text-decoration: none ;
+    }
+    #homebtn{
+            background-color: #FF5722;
+            color:white;
+            border:1px solid #FF5722;
+            font-weight: bolder;
+            font-size:smaller;
+            width:180px;
+            padding:1%;
+            border-radius: 5px;            
+        }
+        #containData >div> div >button{
+            padding: 5px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+   <h1><marquee>Welcome to cart</marquee></h1> 
+   <a href="frontpage.html"><button id="homebtn">GO TO HOME PAGE</button></a> 
+   <div id="containData"></div>
+   <h1 id="totalprice">Total Price</h1>
+   <a href="checkout.html">
+   <h2>CHECKOUT</h2>
+   </a>
+</body>
+</html><script>
+    var sum=0;
+let parent=document.getElementById("containData");
+let cart=JSON.parse(localStorage.getItem("cart"));
+var i=0;
+function show(el){
+    sum=0;
+    parent.innerHTML="";
+      el.forEach(function(product){
+          
+        let outerdiv= document.createElement("div");
+      let div= document.createElement("div");
+      let div2= document.createElement("div");
+      let div3= document.createElement("div");
+      let img = document.createElement("img");
+      img.src=product.img;
+      let product_price = document.createElement("p");
+      product_price.textContent="₹"+product.mrp;
+      product_price.style.fontSize="18px";
+      let product_name = document.createElement("p");
+      product_name.textContent=product.name;
+      product_name.style.fontSize="20px";
+      let addto_wish = document.createElement("button");
+      addto_wish.textContent="Add To Wishlist";
+      addto_wish.style.color="#24A3B5";
+      addto_wish.onclick=function(){
+        addWishList(product);
+      }
+      let shipping = document.createElement("p");
+      shipping.textContent="Shipping: FREE";
+      let count=document.createElement("button");
+      count.textContent=product.count;
+      count.style.marginLeft="0px";
+      let decrement=document.createElement("button");
+      decrement.textContent="-";
+      decrement.style.marginLeft="10px";
+      decrement.style.marginRight="10px";
+      decrement.onclick=function(){
+          decrementItemCount(product);
+      }
+      let increment=document.createElement("button");
+      increment.textContent="+";
+      increment.style.marginLeft="10px";
+      increment.style.marginRight="10px";
+      increment.onclick=function(){
+          incrementItemCount(product);
+      }
+      var total=document.createElement("p");
+      total.textContent="Total ₹"+product.count*product.mrp;
+      sum+=product.count*product.mrp;
+      total.style.fontSize="23px";
+      var taxcount=document.createElement("p");
+      taxcount.textContent="Inclusive of all taxes";
+      let removeFromCart_btn= document.createElement("button");
+      removeFromCart_btn.innerText="Remove";
+      removeFromCart_btn.onclick=function(){removeFromCrt(product);}
+      removeFromCart_btn.style.color="red";
+      div.append(img);
+      let lineChange = document.createElement("p");
+      div2.append(product_name, decrement, count,increment,product_price);
+      div3.append(total,taxcount,addto_wish,removeFromCart_btn,shipping);
+      outerdiv.append(div,div2,div3);
+      parent.append(outerdiv);
+    });
+    document.getElementById("totalprice").textContent="Total Price ₹"+sum; 
+    }
+    show(cart);
+function incrementItemCount(p){
+    let product_cart=JSON.parse(localStorage.getItem("cart"));
+    var check=true;
+    for(var i=0;i<product_cart.length;i++){
+        if(product_cart[i].name==p.name){
+            if(product_cart[i].count==5){
+            alert("Number of product can not be more than five");
+            check=false;
+            break;
+         }
+            product_cart[i].count++;
+         break;
+         }
+        }
+    localStorage.setItem("cart",JSON.stringify(product_cart));
+    if(check)
+    show(product_cart);
+}
+function decrementItemCount(p){
+    let product_cart=JSON.parse(localStorage.getItem("cart"));
+    var check=true;
+    for(var i=0;i<product_cart.length;i++){
+        if(product_cart[i].name==p.name){
+         if(product_cart[i].count==1){
+            check=false;
+            break;
+         }
+         product_cart[i].count--;
+         break;
+        }
+    }
+    localStorage.setItem("cart",JSON.stringify(product_cart));
+    if(check)
+    show(product_cart);
+
+}
+
+    function removeFromCrt(p){
+        let product_cart=JSON.parse(localStorage.getItem("cart"));
+    var check=true;
+    for(var i=0;i<product_cart.length;i++){
+        if(product_cart[i].name==p.name){
+            product_cart.splice(i,1);
+            break;
+        }
+    }
+    if(product_cart.length==0)
+    localStorage.setItem("cart",JSON.stringify(product_cart));
+    show(product_cart);
+}
+function addWishList(p){
+    let product_cart=JSON.parse(localStorage.getItem("wishList"));
+    var check=true;
+    console.log(product_cart)
+    for(var i=0;i<product_cart.length;i++){
+        if(product_cart[i].name==p.name){
+            check=false;
+            break;
+        }
+    }
+    if(check)
+    product_cart.push(p);
+   
+    localStorage.setItem("wishList",JSON.stringify(product_cart));
+}
+if(localStorage.getItem("cart")===null){
+    localStorage.setItem("cart",JSON.stringify([]));
+}
+    </script>

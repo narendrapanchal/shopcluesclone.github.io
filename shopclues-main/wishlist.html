@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WishList</title><style>
+     #containData{
+        width:90%;
+        margin:auto;
+        padding:2%;
+        margin-top:2%;
+        display:grid;
+        grid-gap: 1%;
+        grid-template-columns: 24% 24% 24% 24%;
+    }
+    #containData > div{
+        background-color: white;
+        margin-bottom: 30px;
+      padding: 30px;
+    }
+    #containData > div:hover{
+        border: 2px solid #24A3B5;
+    }
+    img{
+            width:150px;
+            height:150px;
+            margin: auto;
+        }
+        #homebtn{
+            background-color: #FF5722;
+            color:white;
+            border:1px solid #FF5722;
+            font-weight: bolder;
+            font-size:smaller;
+            width:180px;
+            padding:1%;
+            border-radius: 5px;            
+        }
+        #containData > div >button{
+            padding: 4px;
+            border: none;
+        }
+    body{
+        background-color: skyblue;
+    }</style>
+</head>
+<body>
+   <h1><marquee>Welcome to Wishlist</marquee></h1>
+   <a href="frontpage.html"><button id="homebtn">GO TO HOME PAGE</button></a>  
+   <div id="containData"></div>
+</body>
+</html><script>
+let parent=document.getElementById("containData");
+let wishList=JSON.parse(localStorage.getItem("wishList"));
+console.log(wishList);
+function show(el){
+    parent.innerHTML="";
+      el.forEach(function(product){
+      let div= document.createElement("div");
+      let img = document.createElement("img");
+      img.src=product.img;
+      let product_price = document.createElement("p");
+      product_price.textContent="₹"+product.mrp;
+      let product_name = document.createElement("p");
+      product_name.textContent=product.name;
+      let product_discount = document.createElement("p");
+      product_discount.textContent="After "+product.discount+"% "+"off";
+      product_discount.style.color="#24A3B5"
+      product_discount.style.fontSize="20px"
+      let product_rating = document.createElement("p");
+      product_rating.textContent=product.rating+" "+"⭐";
+      let addToCart_btn = document.createElement("button");
+  addToCart_btn.innerText="Add To Cart";
+  addToCart_btn.style.backgroundColor="#24A3B5";
+  addToCart_btn.style.padding="3px";
+  addToCart_btn.style.color="white";
+  addToCart_btn.style.marginLeft="10px";
+  addToCart_btn.onclick=function(){addToCrt(product);}
+      let removeFromWishList = document.createElement("button");
+      removeFromWishList.innerText="RemoveFromWishList";
+      removeFromWishList.style.backgroundColor="#FF5722";
+      removeFromWishList.style.color="white";
+      removeFromWishList.onclick=function(){removeFromwish(product);}
+      div.append(img,product_rating,product_name,product_price,product_discount,removeFromWishList,addToCart_btn);
+      parent.append(div);
+    });  
+    }
+    show(wishList);
+    
+    function removeFromwish(p){
+    let product_wishList=JSON.parse(localStorage.getItem("wishList"));
+    var check=true;
+    for(var i=0;i<product_wishList.length;i++){
+        if(product_wishList[i].name==p.name){
+            product_wishList.splice(i,1);
+            break;
+        }
+    }
+    if(product_wishList.length==0)
+    alert("WishList is empty please add some products");
+    localStorage.setItem("wishList",JSON.stringify(product_wishList));
+    show(product_wishList);
+}
+function addToCrt(p){
+    let product_cart=JSON.parse(localStorage.getItem("cart"));
+    var check=true;
+    for(var i=0;i<product_cart.length;i++){
+        if(product_cart[i].name==p.name){
+            check=false;
+            break;
+        }
+    }
+    if(check){
+        p.count=1;
+        product_cart.push(p);
+        alert("Added to the Cart");
+    }
+    else
+    alert("Added to the Cart");
+    localStorage.setItem("cart",JSON.stringify(product_cart));
+}
+
+    </script>

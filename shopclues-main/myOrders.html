@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History</title>
+    <style>
+    body{
+        background-color:skyblue;
+        }
+    #checkOutData{
+        display:grid;
+        grid-template-columns: 23% 23% 23% 23%;
+        gap:2%;
+    }   
+    .divParent{
+        background-color: white;
+        margin-bottom: 30px;
+        padding: 30px;
+    }
+    #checkOutData > div:hover{
+        border: 2px solid #24A3B5;
+    }
+    img{
+        width:100%;
+        height:60%;
+        margin: auto;
+        }    
+        h2{
+            color: rgb(107, 55, 55);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2 >Order History</h2>
+        <div id="checkOutData"></div>
+        
+        <script>
+
+let mainParent=document.getElementById("checkOutData");
+
+    let orderData= JSON.parse(localStorage.getItem("myOrders"));
+
+        function showFinalData(el){
+    mainParent.innerHTML="";
+      el.forEach(function(product){
+          
+        let parent= document.createElement("div");
+        parent.setAttribute("class","divParent");
+        mainParent.append(parent);
+
+        let prod_img = document.createElement("img");
+        prod_img.src=product.img;
+        parent.append(prod_img);
+
+        let prod_name= document.createElement("p");
+        prod_name.textContent=product.name;
+        parent.append(prod_name);
+
+        let prod_price= document.createElement("p");
+        prod_price.textContent="₹"+product.price;
+        parent.append(prod_price);
+
+
+      }) 
+ 
+    }
+    showFinalData(orderData);
+        </script>
+</body>
+</html>

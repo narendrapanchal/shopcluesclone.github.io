@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men Page</title>
+    <style>
+         #mainbar{
+            display: grid;
+            grid-gap: 1%;
+            grid-template-columns: 18% 55% 5% 5% 5% 10%;
+            grid-template-rows: 20%;
+            grid-gap:1%;
+            margin:3%;
+
+        }
+       h3{
+            margin:0px;    
+            
+        }
+        ion-icon {
+         color: #24A3B5;
+         
+         }
+        #mainbar>a>img{
+            width:70%;
+            height:200%;
+        }
+        .searchbox>ion-icon {
+       font-size: 20px;
+       background-color: #E3F2FD;
+       padding: 1.60%;
+       border-radius: 10%;
+       }
+        ion-icon {
+       font-size: 30px;
+       }
+       .searchbox{
+           display: flex;
+           align-items: center;
+           margin:2.5%;
+           justify-content: center;
+           
+       }
+       .searchbox>input{
+           padding:2%;
+           width: 75%;
+           background-color: #E3F2FD;
+           border:none;
+           outline: none;
+       }
+       .searchbox>input:hover{
+           background-color: white;
+       }
+       .searchbox>button{
+           padding:2% 5%;
+           color: white;
+           font-weight: 600;
+           background-color: #e73a05;
+           border-radius: 5%;
+           border:none;
+       }
+        #heading{
+            justify-content: center;
+            margin: auto;
+            width: 70%;
+        }
+        #heading > div{
+            display: inline-block;
+            margin-left: 20px;
+            padding:15px;
+        }
+        #header{
+            background-color: #24A3B5;
+            color:white;
+        }
+        #mobiles:hover,#men:hover,#women:hover,#home:hover{
+            background-color: white;
+            color:#24a3b5;
+        }
+        img{
+            width:60%;
+            height:35%;
+            margin: auto;
+        }
+
+        #containData{
+            width:80%; 
+            padding:2%;
+            margin-top:2%;
+            display:grid;
+            grid-template-columns: 24% 24% 24% 24%;
+        }
+        #containData > div{
+            background-color: white;
+            margin-bottom: 30px;
+          padding: 20px;
+        }
+        #containData > div:hover{
+            border: 2px solid #24A3B5;
+        }
+        body{
+            background-color: skyblue;
+        }
+        #men{
+            background-color: white;
+            color:#24a3b5;
+        }
+        #datafilters{
+           display: flex;
+       }
+       #filters{
+           width: 20%;
+           flex-grow: 1;
+           padding:2%;
+            margin-top:2%;
+       }
+       #containData{
+           width: 80%;
+           flex-grow: 3;
+       }
+       #heading > img{
+            width:70px;
+            height:30px;
+            vertical-align: middle;
+       }
+       span{
+           margin-left: 10px;
+       }
+       h3>ul{
+           display: block;
+           background-color: white;
+           position: absolute;
+           margin: 0%;
+           
+       }
+       h3>ul>li{
+           display: none;
+           position: relative;
+           font-size: 15px;
+           font-weight: 200;
+           padding:2%;
+       }
+       h3>ul>li:hover{
+           background-color: #E3F2FD;
+       }
+       h3:hover ul li{
+          display: block;
+       }
+       #mobiles>ul{
+           display: block;
+           background-color: white;
+           position: absolute;
+           margin: 0%;
+           padding-right:2%;
+           
+       }
+       #mobiles>ul>li{
+           display: none;
+           position: relative;
+           font-size: 15px;
+           font-weight: 200;
+           
+       }
+       #mobiles>ul>li:hover{
+           background-color: #E3F2FD;
+           
+       }
+       #mobiles:hover ul li{
+          display: block;
+       }
+       #men>ul{
+           display: block;
+           background-color: white;
+           position: absolute;
+           margin: 0%;
+           padding-right:2%;
+       }
+       #men>ul>li{
+           display: none;
+           position: relative;
+           font-size: 15px;
+           font-weight: 200;
+           padding:2%;
+       }
+       #men>ul>li:hover{
+           background-color: #E3F2FD;
+       }
+       #men:hover ul li{
+          display: block;
+       }
+       #home>ul{
+           display: block;
+           background-color: white;
+           position: absolute;
+           margin: 0%;
+           padding-right:2%;
+       }
+       #home>ul>li{
+           display: none;
+           position: relative;
+           font-size: 15px;
+           font-weight: 200;
+           padding:2%;
+       }
+       #home>ul>li:hover{
+           background-color: #E3F2FD;
+       }
+       #home:hover ul li{
+          display: block;
+       }
+      #women>ul{
+           display: block;
+           background-color: white;
+           position: absolute;
+           margin: 0%;
+           padding-right:2%;
+       }
+      #women>ul>li{
+           display: none;
+           position: relative;
+           font-size: 15px;
+           font-weight: 200;
+           padding:2%;
+       }
+      #women>ul>li:hover{
+           background-color: #E3F2FD;
+       }
+      #women:hover ul li{
+          display: block;
+       }
+      
+       a {
+  text-decoration: none !important;
+}
+
+#filters >div >button{
+    background-color: #e73a05;
+    padding: 5px;
+
+    color: white;
+    border: none;
+}
+#filters >div >input{
+ 
+    padding: 5px;
+}
+#below{
+            display:grid;
+            grid-template-columns: 50% 50%;
+            background-color:white;
+            gap:1%;
+            margin: 2% 0%;
+            padding: 1%;
+        }
+        #icon_below{
+            display: grid;
+            grid-template-columns: 6% 6% 6% 6% 6% 6% 60%;
+        }
+        #icon_below>a>ion-icon {
+            font-size: 30px;
+            color: blueviolet;
+          }
+
+          #btnScrollToTop{
+            position:fixed;
+            right:10px;
+            bottom:10px;
+            width:50px;
+            height:50px;
+            border-radius:50%;
+            background: #90A4AE;
+            color:white;
+            border:none;
+            outline:none;
+            cursor:pointer;
+        }
+        #btnScrollToTop:active{
+            background:#546E7A;
+
+        }
+        #containData > div > button{
+            border: none;
+        }
+       
+        #btnScrollToTop>ion-icon {
+         font-size: 30px;
+        }
+        #mainbar > a >img{
+            width: 80%;
+        }
+        #mainbar >h3> ul >li:nth-child(1){
+            margin-right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainbar">
+        <a href=frontpage.html><img src="https://images.shopclues.com/images/ui/shopclues_logo@2x.png"  /></a>
+        <div class="searchbox">
+            <ion-icon name="search-outline"></ion-icon>
+            <input id="search_item" type="text" placeholder="What's in your mind today?"/>
+            <button onclick="search()">Search</button>
+          </div>
+        <a href=cart1.html ><ion-icon name="notifications-outline"></ion-icon></a>
+        <a href=wishlist.html > <ion-icon name="heart-outline"></ion-icon></a>
+        <a href=cart.html ><ion-icon name="cart-outline"></ion-icon></a>
+        <h3><a href=signIn.html id="signInText">Sign In</a>
+            <ul>
+                <li><a href=myOrders.html >MyOrders</a></li>
+                <li><a href=profileinput.html>Profieldata</a></li>
+                <li><a href=wishlist.html>Wishlist</a></li>
+                <li><a href=profileShow.html>Profile</a></li>
+                <li><a href=signout.html>Sign Out</a></li>
+              </ul>
+         
+          
+        </h3>
+        </div>
+
+        <div id="header">
+            <div id="heading">
+                <img src="https://images.shopclues.com/images/ui/madeinindia.png" id="img"></img>
+                <div onclick="mobilepage()" id="mobiles">MOBILE & MORE
+                    <ul>
+                        <li><a href=mobile.html>Samsung</a></li>
+                        <li><a href=mobile.html>Oneplus</a></li>
+                        <li><a href=mobile.html>Mi</a></li>
+                        <li><a href=mobile.html>Motorola</a></li>
+                        <li><a href=mobile.html>Apple</a></li>
+                        <li><a href=mobile.html>Realme</a></li>
+                        <li><a href=mobile.html>Vivo</a></li>
+                        <li><a href=mobile.html>Oppo</a></li>
+                        <li><a href=mobile.html>Nokia</a></li>
+                      </ul></div>
+                <div onclick="menpage()" id="men">MEN
+                  <ul>
+                    <li><a href=men.html>Shirts</a></li>
+                    <li><a href=men.html>Tshirts</a></li>
+                    <li><a href=men.html>Shoes</a></li>
+                    <li><a href=men.html>Trousers</a></li>
+                    <li><a href=men.html>Jackets</a></li>
+                    <li><a href=men.html>Deoderant</a></li>
+                  </ul>
+                </div>
+                <div onclick="womenpage()" id="women">WOMEN<ul>
+                    <li><a href=women.html>Tops</a></li>
+                    <li><a href=women.html>Tshirts</a></li>
+                    <li><a href=women.html>Shoes</a></li>
+                    <li><a href=women.html>Sweatshirts</a></li>
+                    <li><a href=women.html>Jackets</a></li>
+                    <li><a href=women.html>Deoderant</a></li>
+                  </ul></div>
+                <div onclick="homepage()" id="home">HOME & KITCHEN<ul>
+                    <li><a href=home.html>Carpets</a></li>
+                    <li><a href=home.html>Appliances</a></li>
+                    <li><a href=home.html>Utensils</a></li>
+                    <li><a href=home.html>Dinnerware</a></li>
+                    <li><a href=home.html>Kettles</a></li>
+                  </ul></div>
+            </div>
+            </div>
+            <div id="datafilters">
+                <div id="filters">
+                    <div>
+                        <label for="">Filter by price</label>
+                        <br/>
+                        <input type="text" placeholder="min" id="minPrice" required>
+                        <input type="text" placeholder="max" id="maxPrice" required>
+                        <button id="priceFilterHL"  onclick="ApplyFilterPriceHL()">Apply High To Low</button>
+                        <button id="priceFilterLH" onclick=" ApplyFilterPriceLH()">Apply Low To High</button>
+                    </div>
+                    <br>
+                    <br>
+                    <div>
+                        <label for="">Filter By Rating</label>
+                        <br/>
+                        <input type="text" placeholder="min" id="minRating" required>
+                        <input type="text" placeholder="max" id="maxRating" required>
+                        <button id="ratingFilterHL" onclick=" ApplyFilterRatingHL()">Apply High To Low</button>
+                        <button id="ratingFilterLH"onclick=" ApplyFilterRatingLH()">Apply Low To High</button>
+                    </div>
+                    <br>
+                    <br>
+                    <div>
+                        <label for="">Filter By Discount</label>
+                        <br/>
+                        <input type="text" placeholder="min" id="minDiscount" required>
+                        <input type="text" placeholder="max" id="maxDiscount" required>
+                        <button id="discountFilterHL" onclick=" ApplyFilterDiscountHL()">Apply High To Low</button>
+                        <button id="discountFilterLH" onclick=" ApplyFilterDiscountLH()">Apply Low To High</button>
+                    </div>
+                    
+                </div>
+                <div id="containData"></div> 
+            </div> 
+            
+            <button id="btnScrollToTop">
+                <ion-icon name="arrow-up-outline"></ion-icon>
+        
+            </button>
+        
+            
+        
+              <div id="below">
+                <div>
+                    <div><h3>Keep in Touch</h3></div>
+                    <div id="icon_below">
+                       <a href="https://www.facebook.com/ShopClues/"><ion-icon name="logo-facebook"></ion-icon></a>
+                       <a href="https://in.pinterest.com/shopclues/_created/"><ion-icon name="logo-pinterest"></ion-icon></a>
+                       <a href="https://twitter.com/shopclues"><ion-icon name="logo-twitter"></ion-icon></a>
+                       <a href="https://plus.google.com/"><ion-icon name="logo-google"></ion-icon></a>
+                        <a href="https://www.youtube.com/channel/UCnxPAa_6EL5ggl0_FRq6Zjw"><ion-icon name="logo-youtube"></ion-icon></a>
+                        <a href="https://www.linkedin.com/company/shopclues/"><ion-icon name="logo-linkedin"></ion-icon></a>
+                       <div></div>
+                    </div>
+                    
+                </div>
+                <div>
+                   <div><h3>100% Secure and Trusted Payment</h3></div>
+                   <img src="https://images.shopclues.com/images/ui/pgateway_dkt@2x.png" width="100%"/>
+                </div>
+            </div>
+            
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+<script>
+    if(localStorage.getItem("activeUser")===null){
+        localStorage.setItem("activeUser",JSON.stringify([]));
+    }
+    var presentUser=JSON.parse(localStorage.getItem("activeUser"));
+    if(presentUser.length==0)
+       {}
+    else if(presentUser[0].username==null){
+      document.getElementById("signInText").textContent="SetProFileData";
+    }else{
+        document.getElementById("signInText").textContent=presentUser[0].username;
+
+    }
+let parent =document.getElementById("containData");
+var filterableData=[];
+
+function ApplyFilterPriceHL(){
+    var min=document.getElementById("minPrice").value;
+    var max=document.getElementById("maxPrice").value;
+    min=Number(min);
+    max=Number(max);
+    for(var i=0;i<menData.length;i++){
+        if((menData[i].mrp > min) && (menData[i].mrp < max)){
+            filterableData.push(menData[i]);
+        }
+        console.log(typeof(min),min);
+
+    }
+
+    filterableData.sort(function(a,b){
+        return b.mrp -a.mrp;
+    });
+    show(filterableData);
+    filterableData=[];
+}
+function ApplyFilterPriceLH(){
+    var min=document.getElementById("minPrice").value;
+    var max=document.getElementById("maxPrice").value;
+    min=Number(min);
+    max=Number(max);
+    for(var i=0;i<menData.length;i++){
+        if((menData[i].mrp > min) && (menData[i].mrp < max)){
+            filterableData.push(menData[i]);
+        }
+        console.log(typeof(min),min);
+
+    }
+
+    filterableData.sort(function(a,b){
+        return a.mrp -b.mrp;
+    });
+    show(filterableData);
+    filterableData=[];
+}
+
+function ApplyFilterRatingHL(){
+    var min=document.getElementById("minRating").value;
+    var max=document.getElementById("maxRating").value;
+    min=Number(min);
+    max=Number(max);
+    for(var i=0;i<menData.length;i++){
+        if((menData[i].rating > min) && (menData[i].rating < max)){
+            filterableData.push(menData[i]);
+        }
+        console.log(typeof(min),min);
+
+    }
+
+    filterableData.sort(function(a,b){
+        return b.rating -a.rating;
+    });
+    show(filterableData);
+    filterableData=[];
+}
+
+function ApplyFilterRatingLH(){
+    var min=document.getElementById("minRating").value;
+    var max=document.getElementById("maxRating").value;
+    min=Number(min);
+    max=Number(max);
+    for(var i=0;i<menData.length;i++){
+        if((menData[i].rating > min) && (menData[i].rating < max)){
+            filterableData.push(menData[i]);
+        }
+        console.log(typeof(min),min);
+
+    }
+
+    filterableData.sort(function(a,b){
+        return a.rating -b.rating;
+    });
+    show(filterableData);
+    filterableData=[];
+}
+
+function ApplyFilterDiscountHL(){
+    var min=document.getElementById("minDiscount").value;
+    var max=document.getElementById("maxDiscount").value;
+    min=Number(min);
+    max=Number(max);
+    for(var i=0;i<menData.length;i++){
+        if((menData[i].discount > min) && (menData[i].discount < max)){
+            filterableData.push(menData[i]);
+        }
+        console.log(typeof(min),min);
+    }
+
+    filterableData.sort(function(a,b){
+        return b.discount -a.discount;
+    });
+    show(filterableData);
+    filterableData=[];
+}
+function ApplyFilterDiscountLH(){
+    var min=document.getElementById("minDiscount").value;
+    var max=document.getElementById("maxDiscount").value;
+    min=Number(min);
+    max=Number(max);
+    for(var i=0;i<menData.length;i++){
+        if((menData[i].discount > min) && (menData[i].discount < max)){
+            filterableData.push(menData[i]);
+        }
+        console.log(typeof(min),min);
+    }
+
+    filterableData.sort(function(a,b){
+        return a.discount -b.discount;
+    });
+    show(filterableData);
+    filterableData=[];
+}
+
+let menData=[{name:"Pause Olive Solid Shawl Collar Cardigan",
+mrp:"1099",
+discount:"52",
+rating:"3",
+img:"https://cdn.shopclues.com/images1/thumbnails/103065/320/1/147976958-103065391-1587804134.jpg"},
+{name:"Veirdo Men's Maroon V-Neck T-shirt",
+mrp:"999",
+discount:"73",
+rating:"4.0",
+img:"https://cdn.shopclues.com/images/thumbnails/86292/200/200/129791864TSHV26BLKMRNCopy1507883025.jpg"},
+{name:"Stylogue Olive Printed Half Sleeves T-Shirt",
+mrp:"299",
+discount:"40",
+rating:"3.2",
+img:"https://cdn.shopclues.com/images1/thumbnails/114435/160/160/152402990-114435286-1623836440.jpg"},
+{name:"PE Men's Brown Long Sleeve Regular Fit T-Shirt",
+mrp:"1999",
+discount:"67",
+rating:"4.2",
+img:"https://cdn.shopclues.com/images1/thumbnails/79269/320/320/134551427-79269186-1560489876.jpg"},
+{name:"Pause Black Stylish hand Zip Bomby Winter Jacket ",
+mrp:"1499",
+discount:"63",
+rating:"3.9",
+img:"https://cdn.shopclues.com/images1/thumbnails/115272/320/1/150739973-115272207-1631620898.jpg"},
+{name:"Woakers Men's White-Orange Sneakers",
+mrp:"899",
+discount:"41",
+rating:"4.0",
+img:"https://cdn.shopclues.com/images1/thumbnails/111789/320/1/151324271-111789356-1608656401.jpg"},
+{name:"NIKE AIR MAX 2020 BLACK RUNING SHOES",
+mrp:"15995",
+discount:"87",
+rating:"4.4",
+img:"https://cdn.shopclues.com/images1/thumbnails/105345/280/1/149172856-105345517-1583313897.jpg"},
+{name:"Fashlook Men White Block Sky Blue Slim Fit Casual Shirt",
+mrp:"3295",
+discount:"83",
+rating:"4.6",
+img:"https://cdn.shopclues.com/images1/thumbnails/107050/160/160/149812588-107050856-1590565042.jpg"},
+{name:"Lee Peeter Men's Tan Patent Formal Shoe",
+mrp:"1999",
+discount:"72",
+rating:"4.1",
+img:"https://cdn.shopclues.com/images1/thumbnails/90035/320/1/139855539-90035166-1531377013.jpg"},
+{name:"LeatherRetail White Spanish Faux Leather Jacket For Man",
+mrp:"4999",
+discount:"65",
+rating:"3.5",
+img:"https://cdn.shopclues.com/images1/thumbnails/91593/320/1/140445912-91593353-1535448217.jpg"},
+{name:"Stylogue Round Neck Half Sleeve T-shirt For Men",
+mrp:"699",
+discount:"70",
+rating:"3.7",
+img:"https://cdn.shopclues.com/images1/thumbnails/108959/280/1/150492191-108959097-1609164011.jpg"},
+{name:"Trendyz Men White Cotton Hooded Tshirt",
+mrp:"1299",
+discount:"56",
+rating:"4.3",
+img:"https://cdn.shopclues.com/images1/thumbnails/105344/320/1/149172711-105344979-1600845832.jpg"},
+{name:"Mishor Men Grey Plain Hooded Sweatshirt",
+mrp:"1499",
+discount:"53",
+rating:"4.7",
+img:"https://cdn.shopclues.com/images1/thumbnails/112932/320/320/151886403-112932676-1610972024.jpg"},
+{name:"FrionKandy Cotton Block Print Shirt",
+mrp:"1399",
+discount:"70",
+rating:"4.2",
+img:"https://cdn.shopclues.com/images1/thumbnails/110878/280/1/151050227-110878355-1602037025.jpg"},
+{name:"Men's White Black Round Neck Color Block T-Shirt",
+mrp:"399",
+discount:"30",
+rating:"4.0",
+img:"https://cdn.shopclues.com/images1/thumbnails/101924/280/1/147322523-101924415-1563454231.jpg"},]; // put all men data here
+ // Put mobile data here
+
+function womenpage(){
+    window.location.href="women.html";
+}
+
+function mobilepage(){
+    window.location.href="mobile.html";
+}
+function homepage(){
+    window.location.href="home.html";
+}
+show(menData);
+function show(el){
+parent.innerHTML="";
+fiterableData=el;
+  el.forEach(function(product){
+  let div= document.createElement("div");
+  let img = document.createElement("img");
+  img.src=product.img;
+  let product_price = document.createElement("p");
+ // Three types of price current total paybel
+ let exprice=document.createElement("span");
+  let totalprice=document.createElement("span");
+  let currprice=document.createElement("span");
+
+  currprice.textContent="₹"+product.mrp;
+  var total=Math.ceil(((product.mrp/(100-product.discount))*100));
+  totalprice.textContent="₹"+total;
+  var exdiscount=Math.ceil(total*(product.discount/2))/100
+  exprice.textContent="ex ₹"+Math.ceil(total-exdiscount);
+  totalprice.style.textDecorationLine="line-through"
+  exprice.style.textDecorationLine="line-through"
+  product_price.append(exprice,totalprice,currprice);
+  let product_name = document.createElement("p");
+  product_name.textContent=product.name;
+  let product_discount = document.createElement("p");
+  product_discount.textContent=product.discount+" % "+"off";
+  product_discount.style.color="#24A3B5"
+  product_discount.style.fontSize="20px"
+  let product_rating = document.createElement("p");
+  product_rating.textContent=product.rating+" "+"⭐";
+  let addToCart_btn = document.createElement("button");
+  addToCart_btn.innerText="Add To Cart";
+  addToCart_btn.style.backgroundColor="#24A3B5";
+  addToCart_btn.style.padding="3px";
+  addToCart_btn.style.color="white";
+  addToCart_btn.style.marginLeft="10px";
+  addToCart_btn.onclick=function(){addToCrt(product);}
+  let addto_wish = document.createElement("button");
+  addto_wish.innerText="Add To Wishlist";
+  addto_wish.style.padding="3px";
+  addto_wish.style.backgroundColor="#e73a05";
+  addto_wish.style.color="white";
+  
+  addto_wish.onclick=function(){addToWishList(product);}
+  div.append(img,product_rating,product_name,product_price,product_discount,addto_wish, addToCart_btn);
+  parent.append(div);
+
+  product_name.onclick=function(){
+        product_directto(product);
+      }
+});  
+}
+function addToWishList(p){
+    let product_cart=JSON.parse(localStorage.getItem("wishList"));
+    var check=true;
+    for(var i=0;i<product_cart.length;i++){
+        if(product_cart[i].name==p.name){
+            check=false;
+            break;
+        }
+    }
+    if(check)
+ {   product_cart.push(p);
+    alert("Added to the WishList");  
+}  else
+    alert("Added to the WishList");
+    localStorage.setItem("wishList",JSON.stringify(product_cart));
+}
+
+
+show(menData);
+
+function search()
+    {
+     var searchable_item=[];
+     var n=document.getElementById("search_item");
+     var ser=n.value;
+     for(var j=0;j<menData.length;j++)
+     {
+        var data_1=menData[j].name.trim().split(" ");
+        for(var z=0;z<data_1.length;z++)
+        {
+         if(ser==data_1[z])
+         {
+             searchable_item.push(menData[j]);
+         }
+        }
+     }
+     if(searchable_item.length!=0)
+     {
+    show(searchable_item);
+     }
+     else{
+         alert("Sorry! Product not Found");
+         show(menData);
+     }
+    }
+    if(localStorage.getItem("cart")===null){
+    localStorage.setItem("cart",JSON.stringify([]));
+}
+function addToCrt(p){
+    let product_cart=JSON.parse(localStorage.getItem("cart"));
+    var check=true;
+    for(var i=0;i<product_cart.length;i++){
+        if(product_cart[i].name==p.name){
+            check=false;
+            break;
+        }
+    }
+    if(check){
+        p.count=1;
+        product_cart.push(p);
+        alert("Added to the Cart");
+
+    }
+    else
+    alert("Added to the Cart");
+    localStorage.setItem("cart",JSON.stringify(product_cart));
+}
+
+const btnScrollToTop=document.querySelector("#btnScrollToTop");
+    btnScrollToTop.addEventListener("click",function(){
+    window.scrollTo({
+        top:0,
+        left:0,
+        behavior:"smooth"
+    });
+});
+
+function product_directto(product){
+   localStorage.setItem("productToShow",JSON.stringify([]));  
+   let product_toShow=JSON.parse(localStorage.getItem("productToShow"));
+
+   product_toShow.push(product);
+
+    localStorage.setItem("productToShow",JSON.stringify(product_toShow));
+  
+    window.location.href="productshowing.html";
+
+  }
+</script>

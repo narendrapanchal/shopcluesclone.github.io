@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Product</title>
+    <style>
+         #mainbar{
+            display: grid;
+            grid-gap: 1%;
+            grid-template-columns: 18% 55% 5% 5% 5% 10%;
+            grid-template-rows: 20%;
+            grid-gap:1%;
+            margin:3%;
+
+        }
+       h3{
+            margin:0px;    
+            
+        }
+        ion-icon {
+         color: #24A3B5;
+         
+         }
+        #mainbar>a>img{
+            width:70%;
+            height:200%;
+        }
+        .searchbox>ion-icon {
+       font-size: 20px;
+       background-color: #E3F2FD;
+       padding: 1.60%;
+       border-radius: 10%;
+       }
+        ion-icon {
+       font-size: 30px;
+       }
+       .searchbox{
+           display: flex;
+           align-items: center;
+           margin:2.5%;
+           justify-content: center;
+           
+       }
+       .searchbox>input{
+           padding:2%;
+           width: 75%;
+           background-color: #E3F2FD;
+           border:none;
+           outline: none;
+       }
+       .searchbox>input:hover{
+           background-color: white;
+       }
+       .searchbox>button{
+           padding:2% 5%;
+           color: white;
+           font-weight: 600;
+           background-color: #FF5722;
+           border-radius: 5%;
+           border:none;
+       }
+        #heading{
+            justify-content: center;
+            margin: auto;
+            width: 70%;
+        }
+        #heading > div{
+            display: inline-block;
+            margin-left: 20px;
+            padding:15px;
+        }
+        #header{
+            background-color: #24A3B5;
+            color:white;
+        }
+        #mobiles:hover,#men:hover,#women:hover,#home:hover{
+            background-color: white;
+            color:#24a3b5;
+        }
+        img{
+            width:60%;
+            height:35%;
+            margin: auto;
+        }
+
+        #containData{
+            width:80%; 
+            padding:2%;
+            margin-top:2%;
+            display:grid;
+            grid-template-columns: 24% 24% 24% 24%;
+        }
+        #containData > div{
+            background-color: white;
+            margin-bottom: 30px;
+          padding: 20px;
+        }
+        #containData > div:hover{
+            border: 2px solid #24A3B5;
+        }
+        body{
+            background-color: skyblue;
+        }
+        
+        #containData{
+           width: 80%;
+       }
+       #heading > img{
+            width:70px;
+            height:30px;
+            vertical-align: middle;
+       }
+       h3>ul{
+           display: block;
+           background-color: white;
+           position: absolute;
+           margin: 0%;
+           
+       }
+       h3>ul>li{
+           display: none;
+           position: relative;
+           font-size: 15px;
+           font-weight: 200;
+           padding:2%;
+       }
+       h3>ul>li:hover{
+           background-color: #E3F2FD;
+       }
+       h3:hover ul li{
+          display: block;
+       }
+       #mobiles>ul{
+           display: block;
+           background-color: white;
+           position: absolute;
+           margin: 0%;
+           padding-right:2%;
+           
+       }
+       #mobiles>ul>li{
+           display: none;
+           position: relative;
+           font-size: 15px;
+           font-weight: 200;
+           
+       }
+       #mobiles>ul>li:hover{
+           background-color: #E3F2FD;
+           
+       }
+       #mobiles:hover ul li{
+          display: block;
+       }
+       #men>ul{
+           display: block;
+           background-color: white;
+           position: absolute;
+           margin: 0%;
+           padding-right:2%;
+       }
+       #men>ul>li{
+           display: none;
+           position: relative;
+           font-size: 15px;
+           font-weight: 200;
+           padding:2%;
+       }
+       #men>ul>li:hover{
+           background-color: #E3F2FD;
+       }
+       #men:hover ul li{
+          display: block;
+       }
+       #home>ul{
+           display: block;
+           background-color: white;
+           position: absolute;
+           margin: 0%;
+           padding-right:2%;
+       }
+       #home>ul>li{
+           display: none;
+           position: relative;
+           font-size: 15px;
+           font-weight: 200;
+           padding:2%;
+       }
+       #home>ul>li:hover{
+           background-color: #E3F2FD;
+       }
+       #home:hover ul li{
+          display: block;
+       }
+      #women>ul{
+           display: block;
+           background-color: white;
+           position: absolute;
+           margin: 0%;
+           padding-right:2%;
+       }
+      #women>ul>li{
+           display: none;
+           position: relative;
+           font-size: 15px;
+           font-weight: 200;
+           padding:2%;
+       }
+      #women>ul>li:hover{
+           background-color: #E3F2FD;
+       }
+      #women:hover ul li{
+          display: block;
+       }
+      
+       a {
+  text-decoration: none !important;
+}
+
+#below{
+            display:grid;
+            grid-template-columns: 50% 50%;
+            background-color:white;
+            gap:1%;
+            margin: 2% 0%;
+            padding: 1%;
+        }
+        #icon_below{
+            display: grid;
+            grid-template-columns: 6% 6% 6% 6% 6% 6% 60%;
+        }
+        #icon_below>a>ion-icon {
+            font-size: 30px;
+            color: blueviolet;
+          }
+
+     #productsToShop{
+         display: grid;
+         grid-template-columns: 35% 35%;
+         grid-gap: 5%;
+         margin:5% 15%;
+         background-color: white;
+         justify-content: center;
+     }    
+     #productsToShop>div>img{
+         width:300px;
+        height:320px;
+        padding: 1%;
+     }
+     #productsToShop>div:nth-child(2){
+         padding: 5% 0% 5% 10%;
+     }
+     #mainbar>a >img{
+         width: 80%;
+     }
+    </style>
+</head>
+<body>
+    <div id="mainbar">
+        <a href=frontpage.html><img src="https://images.shopclues.com/images/ui/shopclues_logo@2x.png"/></a>
+        <div class="searchbox">
+            <ion-icon name="search-outline"></ion-icon>
+            <input id="search_item" type="text" placeholder="What's in your mind today?"/>
+            <button onclick="search()">Search</button>
+          </div>
+            
+        <a href=cart1.html target="_blank"><ion-icon name="notifications-outline"></ion-icon></a>
+        <a href=cart1.html target="_blank"> <ion-icon name="heart-outline"></ion-icon></a>
+        <a href=cart1.html target="_blank"><ion-icon name="cart-outline"></ion-icon></a>
+        <h3><a href=signIn.html>Sign In</a>
+          <ul>
+            <li><a href=cart.html>My Orders</a></li>
+            <li><a href=cart.html>My Profile</a></li>
+            <li><a href=cart.html>My wishlist</a></li>
+            <li><a href=cart.html>Help & Support</a></li>
+            <li><a href=cart.html>My favourite stores</a></li>
+          </ul>
+         
+          
+        </h3>
+        </div>
+
+        <div id="header">
+            <div id="heading">
+                <img src="https://images.shopclues.com/images/ui/madeinindia.png" id="img"></img>
+                <div onclick="mobilepage()" id="mobiles">MOBILE & MORE
+                    <ul>
+                        <li><a href=mobile.html>Samsung</a></li>
+                        <li><a href=mobile.html>Oneplus</a></li>
+                        <li><a href=mobile.html>Mi</a></li>
+                        <li><a href=mobile.html>Motorola</a></li>
+                        <li><a href=mobile.html>Apple</a></li>
+                        <li><a href=mobile.html>Realme</a></li>
+                        <li><a href=mobile.html>Vivo</a></li>
+                        <li><a href=mobile.html>Oppo</a></li>
+                        <li><a href=mobile.html>Nokia</a></li>
+                      </ul></div>
+                <div onclick="menpage()" id="men">MEN
+                  <ul>
+                    <li><a href=men.html>Shirts</a></li>
+                    <li><a href=men.html>Tshirts</a></li>
+                    <li><a href=men.html>Shoes</a></li>
+                    <li><a href=men.html>Trousers</a></li>
+                    <li><a href=men.html>Jackets</a></li>
+                    <li><a href=men.html>Deoderant</a></li>
+                  </ul>
+                </div>
+                <div onclick="womenpage()" id="women">WOMEN<ul>
+                    <li><a href=women.html>Tops</a></li>
+                    <li><a href=women.html>Tshirts</a></li>
+                    <li><a href=women.html>Shoes</a></li>
+                    <li><a href=women.html>Sweatshirts</a></li>
+                    <li><a href=women.html>Jackets</a></li>
+                    <li><a href=women.html>Deoderant</a></li>
+                  </ul></div>
+                <div onclick="homepage()" id="home">HOME & KITCHEN<ul>
+                    <li><a href=home.html>Carpets</a></li>
+                    <li><a href=home.html>Appliances</a></li>
+                    <li><a href=home.html>Utensils</a></li>
+                    <li><a href=home.html>Dinnerware</a></li>
+                    <li><a href=home.html>Kettles</a></li>
+                  </ul></div>
+            </div>
+            </div>
+    
+
+
+     <div id="productsToShop">
+     </div>
+
+
+
+
+      <div id="below">
+        <div>
+            <div><h3>Keep in Touch</h3></div>
+            <div id="icon_below">
+               <a href="https://www.facebook.com/ShopClues/"><ion-icon name="logo-facebook"></ion-icon></a>
+               <a href="https://in.pinterest.com/shopclues/_created/"><ion-icon name="logo-pinterest"></ion-icon></a>
+               <a href="https://twitter.com/shopclues"><ion-icon name="logo-twitter"></ion-icon></a>
+               <a href="https://plus.google.com/"><ion-icon name="logo-google"></ion-icon></a>
+                <a href="https://www.youtube.com/channel/UCnxPAa_6EL5ggl0_FRq6Zjw"><ion-icon name="logo-youtube"></ion-icon></a>
+                <a href="https://www.linkedin.com/company/shopclues/"><ion-icon name="logo-linkedin"></ion-icon></a>
+               <div></div>
+            </div>
+            
+        </div>
+        <div>
+           <div><h3>100% Secure and Trusted Payment</h3></div>
+           <img src="https://images.shopclues.com/images/ui/pgateway_dkt@2x.png" width="100%"/>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+</body>
+</html>
+<script>
+   
+   let parent=document.getElementById("productsToShop");
+
+   let product_toShow=JSON.parse(localStorage.getItem("productToShow"));
+
+   console.log(product_toShow);
+
+   
+   function showProducts()
+{
+  
+      let div=document.createElement('div');
+
+      let div1=document.createElement('div');
+
+      let img=document.createElement("img");
+
+      img.src=product_toShow[0].img;
+
+      let product_price=document.createElement("h2");
+
+      product_price.textContent= "₹"+" "+product_toShow[0].mrp;
+
+      product_price.style.color="red";
+
+      product_price.style.margin="3% 0% 3% 0%";
+
+      let product_name=document.createElement("h3");
+
+      product_name.textContent=product_toShow[0].name;
+
+      let product_discount=document.createElement("h3");
+
+      product_discount.textContent="After " +product_toShow[0].discount+"% Off";
+
+      product_discount.style.color="blue";
+
+      let product_rating=document.createElement("h3");
+
+      product_rating.textContent=product_toShow[0].rating+" "+"⭐";
+
+      product_rating.style.margin="3% 0% 3% 0%";
+
+      
+
+      div.append(img);
+      div1.append(product_name,product_rating,product_price,product_discount);
+      parent.append(div);
+      parent.append(div1);
+
+  }
+
+  
+  showProducts();
+
+
+
+</script>

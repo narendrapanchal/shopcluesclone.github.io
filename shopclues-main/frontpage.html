@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontPage</title>
+    <style>
+         #mainbar{
+            display: grid;
+            grid-gap: 1%;
+            grid-template-columns: 18% 55% 5% 5% 5% 10%;
+            grid-template-rows: 20%;
+            grid-gap:1%;
+            margin:3%;
+
+        }
+       h3{
+            margin:0px;    
+            
+        }
+        ion-icon {
+         color: #24A3B5;
+         
+         }
+        #mainbar>a>img{
+            width:70%;
+            height:200%;
+        }
+        .searchbox>ion-icon {
+       font-size: 20px;
+       background-color: #E3F2FD;
+       padding: 1.60%;
+       border-radius: 10%;
+       }
+        ion-icon {
+       font-size: 30px;
+       }
+       .searchbox{
+           display: flex;
+           align-items: center;
+           margin:2.5%;
+           justify-content: center;
+           
+       }
+       .searchbox>input{
+           padding:2%;
+           width: 75%;
+           background-color: #E3F2FD;
+           border:none;
+           outline: none;
+       }
+       .searchbox>input:hover{
+           background-color: white;
+       }
+       .searchbox>button{
+           padding:2% 5%;
+           color: white;
+           font-weight: 600;
+           background-color: #e73a05;
+           border-radius: 5%;
+           border:none;
+       }
+        #heading{
+            justify-content: center;
+            margin: auto;
+            width: 70%;
+        }
+        #heading > div{
+            display: inline-block;
+            margin-left: 20px;
+            padding:15px;
+        }
+        #header{
+            background-color: #24A3B5;
+            color:white;
+        }
+        #mobiles:hover,#men:hover,#women:hover,#home:hover{
+            background-color: white;
+            color:#24a3b5;
+        }
+        #img{
+            width:70px;
+            height:30px;
+            vertical-align: middle;
+        }
+        #containData{
+            width:90%;
+            margin:auto;
+            padding:2%;
+            margin-top:2%;
+            display:grid;
+            grid-template-columns: 24% 24% 24% 24%;
+        }
+        #containData > div{
+            background-color: white;
+            margin-bottom: 30px;
+          padding: 30px;
+        }
+        #containData > div:hover{
+            border: 2px solid #24A3B5;
+        }
+        body{
+            background-color: skyblue;
+        }
+
+        h3>ul{
+           display: block;
+           background-color: white;
+           position: absolute;
+           margin: 0%;
+           
+       }
+       h3>ul>li{
+           display: none;
+           position: relative;
+           font-size: 15px;
+           font-weight: 200;
+           padding:2%;
+       }
+       h3>ul>li:hover{
+           background-color: #E3F2FD;
+       }
+       h3:hover ul li{
+          display: block;
+       }
+       #mobiles>ul{
+           display: block;
+           background-color: white;
+           position: absolute;
+           margin: 0%;
+           padding-right:2%;
+           
+       }
+       #mobiles>ul>li{
+           display: none;
+           position: relative;
+           font-size: 15px;
+           font-weight: 200;
+           
+       }
+       #mobiles>ul>li:hover{
+           background-color: #E3F2FD;
+           
+       }
+       #mobiles:hover ul li{
+          display: block;
+       }
+       #men>ul{
+           display: block;
+           background-color: white;
+           position: absolute;
+           margin: 0%;
+           padding-right:2%;
+ 
+       }
+       #men>ul>li{
+           display: none;
+           position: relative;
+           font-size: 15px;
+           font-weight: 200;
+           padding:2%;
+       }
+       #men>ul>li:hover{
+           background-color: #E3F2FD;
+       }
+       #men:hover ul li{
+          display: block;
+       }
+       #home>ul{
+           display: block;
+           background-color: white;
+           position: absolute;
+           margin: 0%;
+           padding-right:2%;
+       }
+       #home>ul>li{
+           display: none;
+           position: relative;
+           font-size: 15px;
+           font-weight: 200;
+           padding:2%;
+       }
+       #home>ul>li:hover{
+           background-color: #E3F2FD;
+       }
+       #home:hover ul li{
+          display: block;
+       }
+      #women>ul{
+           display: block;
+           background-color: white;
+           position: absolute;
+           margin: 0%;
+           padding-right:2%;
+       }
+      #women>ul>li{
+           display: none;
+           position: relative;
+           font-size: 15px;
+           font-weight: 200;
+           padding:2%;
+       }
+      #women>ul>li:hover{
+           background-color: #E3F2FD;
+       }
+      #women:hover ul li{
+          display: block;
+       }
+      
+       a {
+  text-decoration: none !important;
+}
+#mySlideshow>img{
+            width:100%;
+            height:300px;
+            border-radius: 1%;
+        }
+        #slide{
+            width:97%;
+            display:grid;
+            grid-gap: 1%;
+            grid-template-columns: 80% 20%;
+            background-color: white;
+            padding: 0.3%;
+            margin:1%;
+            border-radius: 1%;
+        }
+
+        #btnScrollToTop{
+            position:fixed;
+            right:10px;
+            bottom:10px;
+            width:50px;
+            height:50px;
+            border-radius:50%;
+            background: #90A4AE;
+            color:white;
+            border:none;
+            outline:none;
+            cursor:pointer;
+            
+        }
+        #btnScrollToTop:active{
+            background:#546E7A;
+
+        }
+       
+        #btnScrollToTop>ion-icon {
+         font-size: 30px;
+         color: white;
+        }  
+
+        #bottom_page1{
+            display: grid;
+            grid-template-rows: 30% 70%;
+            text-align: center;
+            width:100%;
+            padding:none;
+            background-color: white;
+        }
+        #bottom_page1>div{
+              font-size: 20px;
+              padding: 1%;     
+          }
+        #bottom_page{
+            display: grid;
+            grid-template-columns: 27% 27% 27%;
+            justify-content: center;
+            padding:0% 6% 0% 6%;
+            gap:1%;
+            text-align: center;
+            background-color: white;
+            
+        }
+        #bottom_page>div>ion-icon {
+            font-size: 50px;
+            color: blueviolet;
+          }
+         
+          #below{
+            display:grid;
+            grid-template-columns: 50% 50%;
+            background-color:white;
+            gap:1%;
+            margin: 2% 0%;
+            padding: 1%;
+        }
+        #icon_below{
+            display: grid;
+            grid-template-columns: 6% 6% 6% 6% 6% 6% 60%;
+        }
+        #icon_below>a>ion-icon {
+            font-size: 30px;
+            color: blueviolet;
+          }
+
+        span{
+            margin-left: 10px;
+        }
+       #containData img{
+            width:60%;
+            height:35%;
+            margin: auto;
+        }
+        #containData > div > button{
+            border: none;
+        }
+        #mainbar >h3> ul >li:nth-child(1){
+            margin-right: 30px;
+        }
+        #slide > div > img{
+            width: 200px;
+            height: 120px;
+        }
+        #mainbar >img{
+         width: 80%;
+     }
+    </style>
+</head>
+<body>
+    <div id="mainbar">
+        <a href=frontpage.html><img src="https://images.shopclues.com/images/ui/shopclues_logo@2x.png"/></a>
+        <div class="searchbox">
+            <ion-icon name="search-outline"></ion-icon>
+            <input id="search_item" type="text" placeholder="What's in your mind today?"/>
+            <button onclick="search()">Search</button>
+          </div>      
+
+        <a href=cart1.html ><ion-icon name="notifications-outline"></ion-icon></a>
+        <a href=wishlist.html > <ion-icon name="heart-outline"></ion-icon></a>
+        <a href=cart.html ><ion-icon name="cart-outline"></ion-icon></a>
+        <h3><a href=signIn.html  id="signInText">Sign In</a>
+          <ul>
+            <li><a href=myOrders.html>MyOrders</a></li>
+            <li><a href=profileinput.html>Profiledata</a></li>
+            <li><a href=wishlist.html>Wishlist</a></li>
+            <li><a href=profileShow.html>Profile</a></li>
+            <li><a href=signout.html>Sign Out</a></li>
+          </ul>     
+        </h3>
+        </div>
+
+        <div id="header">
+            <div id="heading">
+                <img src="https://images.shopclues.com/images/ui/madeinindia.png" id="img"></img>
+                <div onclick="mobilepage()" id="mobiles">MOBILE & MORE
+                    <ul>
+                        <li><a href=mobile.html>Samsung</a></li>
+                        <li><a href=mobile.html>Oneplus</a></li>
+                        <li><a href=mobile.html>Mi</a></li>
+                        <li><a href=mobile.html>Motorola</a></li>
+                        <li><a href=mobile.html>Apple</a></li>
+                        <li><a href=mobile.html>Realme</a></li>
+                        <li><a href=mobile.html>Vivo</a></li>
+                        <li><a href=mobile.html>Oppo</a></li>
+                        <li><a href=mobile.html>Nokia</a></li>
+                      </ul></div>
+                <div onclick="menpage()" id="men">MEN
+                  <ul>
+                    <li><a href=men.html>Shirts</a></li>
+                    <li><a href=men.html>Tshirts</a></li>
+                    <li><a href=men.html>Shoes</a></li>
+                    <li><a href=men.html>Trousers</a></li>
+                    <li><a href=men.html>Jackets</a></li>
+                    <li><a href=men.html>Deoderant</a></li>
+                  </ul>
+                </div>
+                <div onclick="womenpage()" id="women">WOMEN<ul>
+                    <li><a href=women.html>Tops</a></li>
+                    <li><a href=women.html>Tshirts</a></li>
+                    <li><a href=women.html>Shoes</a></li>
+                    <li><a href=women.html>Sweatshirts</a></li>
+                    <li><a href=women.html>Jackets</a></li>
+                    <li><a href=women.html>Deoderant</a></li>
+                  </ul></div>
+                <div onclick="homepage()" id="home">HOME & KITCHEN<ul>
+                    <li><a href=home.html>Carpets</a></li>
+                    <li><a href=home.html>Appliances</a></li>
+                    <li><a href=home.html>Utensils</a></li>
+                    <li><a href=home.html>Dinnerware</a></li>
+                    <li><a href=home.html>Kettles</a></li>
+                  </ul></div>
+            </div>
+            </div>
+
+            <div id="slide">
+                <div>
+                   <div id="mySlideshow"></div>
+                    <div id="sameline"></div>  
+                </div>
+                <div>
+                    <img src="https://cdn.shopclues.com/images/banners/Platinum_23rdSep_Watches_PR.jpg" />
+                    <img src="https://cdn.shopclues.com/images/banners/24thSep_Ikall_Platinum_PR.jpg"/>
+                    <img src="https://cdn.shopclues.com/images/banners/30thSep_Footwear_Platinum_PR.jpg"/>
+                </div>
+        
+            </div>
+
+
+    <button id="btnScrollToTop">
+                <ion-icon name="arrow-up-outline"></ion-icon>
+        
+     </button>
+
+
+    <div id="containData"></div>    
+
+
+    <div id="bottom_page1">
+        <div><h3>Brand of Trust</h3></div>
+        <div id="bottom_page">
+          <div>
+              <ion-icon name="shield-checkmark-outline"></ion-icon>
+              <div>Great Selection</div>
+          </div>
+          <div>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAY1BMVEX///9isfZbrvat1vv5/P+n0/putvZotff2+/+02vtZrfZksvbt9v5xuffx+P6v1/rL5Pze7v273fuLxfh4vPeDwfjn8/7B4Pza7P3P5vyXyvmhz/nN5fyIwvjU6fx8vvebzPmbtupCAAAHp0lEQVR4nN2dW3ejOgyFwRAg4RJuIYQ0JP//Vx5I2ulpOsWbohjv+V7mYVZXvBcgyZIsO848ir33arbfKd85Psjz/O3U923RNNHM9WtpLmpVdl9RyhMWGJ1du6hbYYXHcG1JX4m3wgKLdG1JT1SZsMJKrS3piUJY4NYygTtpM1OsregJdfVlBUaXtSU9EUq/o/t4bUlP7IUfYW+ZHVVVIisw6daW9ER6khXoby17R2NP+B21ztdfhN/RzDZfH/SyAp3SMoGuuK+3LOBWB+GP0Lp4NJbeM5VrK3pCSe+ZmnptSV9RnfSe6WbXO6pq6Xg0OV/TNAj/Qvzg/rN/WLT4Zz7/6/FT468GubDAT/xnoneyLEuSpmj7vPS6Qx2Ev4x/rn0x0NxJ/pDduf/Q42dfJhAlKvJBZ+DOf5rxfu21zyAZVNbxXJHp617AVxC1x3M977tUh2btVc8kKsrLvLd1s/5XNpfk1M15WUPpaMUEfnvBJaqK7yGOtHhUpLiMzSd7eAddr73U31J04A6M9iE6WYk9RvE8rzn8/gBZnJj2IQ7bsGqHSCQ1p3f8CyJRPMtkEh/Kh5zXXuYSkgpQeJXe4hqlOOgVxuXaq1xEr49v1E28h8Qopd71c7+mTqSvYjG7xJEm0L6mW2KXOOLpXIZ49XMOrbdZjL6xKrz9/Nfe/sF2Wx7zVjo5PAReEt1pWoXfM6c/dLm50o4l2ugXZxTx1zm3rMwWChfz7avRiEewttURA2k7c7RM4E46MLCur+0mLDCzra+tFi4B+J5tPUNHWYHOybaeobOwmWmQzblBlPQOy9+vLemJUDpc6y37CN1OOA2Q1Ja5Qmk76pwtE+hK29E3ywSK+/rEMkehauk9k23vaCy9Z7LtsJOSbtJvrstauaRRnfQ7euqq6nC4Xuv0g+D9nyXoOsN+/suDuXTxtz63GejC3DT5+U9JmM74qIq7cjEy3XesCHujnvCn895KOmYxT9JN22fmQveDYjovKR5Ymyef/gxv4uUI00TTgeA/8BlqkucpYw/mV/LpRyh+oMI805aUvBdjpJkOSskbFUY2087wtvb6ljP9CAPpDa559tOPsFp7fYvRpH3E6xHG8TWtGLw9wh+8TTcM8fZ5f6Ar8dTsj1DXr8L/CDX9KurAnr7odblX9q1vk067Qvbe2WHTpMkts2+bGt0htlg6X2+YVtsKUHGnZ3ptl774AD2zHLVFyPht7TUuQZN6GqH29X6v8RLuC0YgmqTx9IedQ6ZpA0805VUnbxRI6yeSsgJOq4d71lim2V5CoEQee6QC2zM4GkN69poZmn0N9sKJzwJ+PX7SeincwEHmJqKk6csOl+eq1J7U2nQbhJ81RZ+Xmyp1d3Pabw4WpX/L88Ybj1OV7xPDT6d+YPgnz4+ld+6qa+DOnhPVWVSi8Kv35d/nUQVB+tlAFMbur2ZgqXC/4im8b/jiA0xV3VvlJaQVKvFm+6VEss36cWfdfl5UYVBZZEI/kFOo0ltuYxwayRzNU269OdmobzzYJaBQuZeysFOfiMKde+4TqxzEF5YqVKouLZY3kCw6fhhe99Z5h2eSXz/DoK62FoWfP/ILhUOoGlw7L7f+6T2Y9R2OgXhYV+dtbq3l/A70HSp32Hik9WHUdirkL2N6KQkw/kht2seY3CSy2mr+HUghX07pfyAK5YelmyRBZgLKn5szSAbtLVRH+AF+8AadsxSfeW+SI6LQDZkLnZrW3ndq4qYfbK6jeyGJ0v5GckUkUp94wcYoKdZy4Ag44cSeast8jtqRgCPiM7gMAl7elRJbG+yyVSV+f6ZBImxo9Y04fMuQ9go3Zt5JNZBBFZ8CZBLstkfpGwqNAvkM8WFVJomgS0lXHSW7lAzzGd3a61wANFydOzWV6JtiXfKjdg00eoj6ooMTJJHZoCLz490XDDM2CDjw80y8H85uiMKYeYY8NvOTOsFYAH34L7jn3SQtlNUQH0ttkjcoQr0wS9wiD5HaoDrQbQIhs0HNoAuDye4Y/UoD1TOuzPXhAqpnHIjDNyxxw3oD5wMocbO7rb3MJUA+QzEnGLECMXPFxok0sx4fUBtUzGdQDxXAfAZzCdw5Qek33jPNAzmU7GdOMDpYgZg5wehD+4yA2dpAPoO6YgM2FVHvhwvEoMbEUzDAK2moE4zYFYLUFRsfqWdQl8CdaAO8qOQGFTkVrc7M4VsD9U0xt4RjBWJug9oDCsmHCE7fDfDOgTlChfYZ8vf+mCQ6I8HNhjlChXwG9wz9BjmUGVAb1AJJ9qfM4RvkM1TN/ClC10Ar7kH60A2t4heIm0Q3Rf9OSB2hQj6DugSO+Qzqio3TIn1T1Pth3X0PD5hbwh2nRHzGZu1VLmL6LsAHO+qKjYM0oobMCUYnQ3wGdYJRf2vACHUJfPAZeomxbaMU55EDWynqlvDBZwBZjZg6fHM8vULuCTeDzwCsTUgdviGDNahPgYP1DOoSOOYzuA0q4jO4E4yQzyC/Ugc48Ka4KzZIborcoGaIz6AugUN9U9wt4U4L9E1xl8ChpiJyg4r4DOapaINBReoZ1C3h0DAmRV0Cx+oZ3NYG2Gco6r7+0Wf86wqd0z+v0DmqaXb0Cv3cm2Qjkef/Dy4fhG+MepBpAAAAAElFTkSuQmCC" width="50px" height="50px"/>
+              <div>Low Price</div>
+          </div>
+          <div>
+              <ion-icon name="cart-outline"></ion-icon>
+              <div>Speedy Delivery</div>
+          </div>
+        </div>
+      </div>
+
+     
+
+      <div id="below">
+        <div>
+            <div><h3>Keep in Touch</h3></div>
+            <div id="icon_below">
+               <a href="https://www.facebook.com/ShopClues/"><ion-icon name="logo-facebook"></ion-icon></a>
+               <a href="https://in.pinterest.com/shopclues/_created/"><ion-icon name="logo-pinterest"></ion-icon></a>
+               <a href="https://twitter.com/shopclues"><ion-icon name="logo-twitter"></ion-icon></a>
+               <a href="https://plus.google.com/"><ion-icon name="logo-google"></ion-icon></a>
+                <a href="https://www.youtube.com/channel/UCnxPAa_6EL5ggl0_FRq6Zjw"><ion-icon name="logo-youtube"></ion-icon></a>
+                <a href="https://www.linkedin.com/company/shopclues/"><ion-icon name="logo-linkedin"></ion-icon></a>
+               <div></div>
+            </div>
+            
+        </div>
+        <div>
+           <div><h3>100% Secure and Trusted Payment</h3></div>
+           <img src="https://images.shopclues.com/images/ui/pgateway_dkt@2x.png" width="100%"/>
+        </div>
+     </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+<script>
+     let images = [
+    "https://cdn.shopclues.com/images/banners/HB1_WBB_Web_MK5_29Sep21.jpg",
+    "https://cdn.shopclues.com/images/banners/Watches_W_17thSep_PR1.jpg",
+    "https://cdn.shopclues.com/images/banners/home_furning_m_rk_0312_W.jpg",
+    "https://cdn.shopclues.com/images/banners/HB4_Urbano_Web_MK5_05Sep21Rev.jpg",
+    "https://cdn.shopclues.com/images/banners/30thSep_W_PR_PowerThrusday.jpg",
+  ];
+
+  let detail = [
+    "Prime mall",
+    "Watches",
+    "Home Furnishing",
+    "Urbano's Men's Fashion",
+    "Power thursday",
+  ];
+
+
+
+  if(localStorage.getItem("activeUser")===null){
+        localStorage.setItem("activeUser",JSON.stringify([]));
+    }
+    var presentUser=JSON.parse(localStorage.getItem("activeUser"));
+    if(presentUser.length==0)
+{}
+    else if(presentUser[0].username==null){
+      document.getElementById("signInText").textContent="SetProFileData";
+    }else{
+        document.getElementById("signInText").textContent=presentUser[0].username;
+
+    }
+let container=document.getElementById("mySlideshow");
+
+let container1=document.getElementById("sameline");
+
+let interval;
+
+function startSlideshow(){
+
+let counter=0;
+
+let img=document.createElement("img");
+
+let div=document.createElement('div');
+
+document.getElementById("sameline").style.padding = "1% 36% 1% 45%";
+document.getElementById("sameline").style.fontSize="20px";
+
+
+img.src=images[0];
+div=detail[0];
+
+container.append(img);
+
+container1.append(div);
+
+counter+=1;
+
+interval=setInterval(function(){
+
+container.innerHTML=null;
+container1.innerHTML=null;
+
+    if(counter===images.length)
+{
+    counter=0;
+}
+
+let img=document.createElement("img");
+let div=document.createElement('div');
+
+img.src=images[counter];
+div=detail[counter];
+
+
+container.append(img);
+container1.append(div);
+
+counter+=1;
+
+},3000);
+}
+
+startSlideshow();
+
+
+    function womenpage(){
+    window.location.href="women.html";
+}
+function menpage(){
+    window.location.href="men.html";
+}
+function mobilepage(){
+    window.location.href="mobile.html";
+}
+function homepage(){
+    window.location.href="home.html";
+}
+
+
+
+let parent =document.getElementById("containData");
+var filterableData=[];
+
+let mobileData=[
+        {
+            img:"https://cdn.shopclues.com/images1/thumbnails/97169/280/1/143849890-97169265-1551168395.jpg",
+            name:"Kichoda 113 Rk9",
+            mrp:1119,
+            discount:36,
+            rating:4.1,
+        },
+        {
+            img:"https://cdn.shopclues.com/images1/thumbnails/111557/280/1/151256411-111557541-1605795037.jpg",
+            name:"S4 Fast Type C Charger for Vivo V17 Pro/Y5",
+            mrp:276,
+            discount:70,
+            rating:3.5,
+        },
+        { img:"https://cdn.shopclues.com/images1/thumbnails/113435/280/1/152095050-113435241-1615803437.jpg",
+            name:"Portronics Modesk 200 POR-1203 Universal ",
+            mrp:699,
+            discount:87,
+            rating:4.2,
+        },
+        {
+            img:"https://cdn.shopclues.com/images1/thumbnails/114509/280/1/152435006-114509479-1624859130.jpg",
+            name:"HP Notebook 14s-dk0093au (R5-3500U/8GB",
+            mrp:52000,
+            discount:2,
+            rating:5,
+        },
+        {
+            img:"https://cdn.shopclues.com/images1/thumbnails/111967/280/1/151412100-111967441-1605206495.jpg",
+            name:"Samsung Galaxy Note 8 Phone",
+            mrp:50000,
+            discount:50,
+            rating:4,
+        },
+        {
+            img:"https://cdn.shopclues.com/images1/thumbnails/113794/280/1/152213252-113794193-1619002101.jpg",
+            name:"OPPO A54 (4 GB RAM, 64 GB ROM)",
+            mrp:14699,
+            discount:9,
+            rating:4.3,
+        },
+        {
+            img:"https://cdn.shopclues.com/images1/thumbnails/111954/280/1/151404610-111954140-1605072745.jpg",
+            name:"OPPO A15 (3GB RAM, 32GB Storage)",
+            mrp:10990,
+            discount:24,
+            rating:4.1,
+        },
+        {
+            img:"https://cdn.shopclues.com/images1/thumbnails/114623/280/1/152498333-114623644-1625885890.jpg",
+            name:"OPPO A33 (Moonlight Black, 32 GB) (3 GB RAM)",
+            mrp:10990,
+            discount:30,
+            rating:4.7,
+        },
+        {
+            img:"https://cdn.shopclues.com/images1/thumbnails/114384/280/1/152384827-114384201-1623162456.jpg",
+            name:"Micromax IN Note 1 (Green, 128 GB) (4 GB RAM)",
+            mrp:13499,
+            discount:27,
+            rating:2,
+        },
+        {
+            img:"https://cdn.shopclues.com/images1/thumbnails/109395/280/1/150611869-109395058-1601281407.jpg",
+            name:"Micromax Canvas Infinity HS2 3 GB RAM 32 GB RO",
+            mrp:8000,
+            discount:44,
+            rating:3,
+        },
+        {
+            img:"https://cdn.shopclues.com/images1/thumbnails/113500/280/1/152119261-113500306-1616596266.jpg",
+            name:"Infinix Smart HD 2021 (Topaz Blue, 32 GB) (2 GB R",
+            mrp:8000,
+            discount:25,
+            rating:4,
+        },
+        {
+            img:"https://cdn.shopclues.com/images1/thumbnails/113500/280/1/152119261-113500306-1616596266.jpg",
+            name:"Infinix Smart 5 (Morandi Green, 32 GB) (2 GB RAM)",
+            mrp:8500,
+            discount:25,
+            rating:3.5,
+        },
+        {
+            img:"https://cdn.shopclues.com/images1/thumbnails/114824/280/1/152565258-114824483-1627054506.jpg",
+            name:"Infinix Hot 10S (Morandi Green, 64 GB) (4 GB RAM)",
+            mrp:11500,
+            discount:23,
+            rating:4.5,
+        },
+        {
+            img:"https://cdn.shopclues.com/images1/thumbnails/112535/280/1/151713279-112535043-1608722333.jpg",
+            name:"BONTECH 32 GB PENDRIVE",
+            mrp:1000,
+            discount:40,
+            rating:4.5,
+        },
+        {
+            img:"https://cdn.shopclues.com/images1/thumbnails/114074/280/1/152295153-114074376-1621143368.jpg",
+            name:"SanDisk Cruzer Blade 64GB USB 2.0 Pen Drive",
+            mrp:650,
+            discount:20,
+            rating:4,
+        }
+
+    ]; // Put mobile data here
+  let womenData=[    {
+      name: "Huda Beauty Red Edition 8g pack of 4",
+      mrp: 700,
+      discount:70,
+      rating:3.9,
+      img: "https://cdn.shopclues.com/images1/thumbnails/99242/280/1/145428226-99242841-1584092112.jpg",
+    },
+    {
+      name: "Women's London Gold plated Necklace ",
+      mrp: 1034,
+      discount:60,
+      rating:4.3,
+      img: "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/10552114/2021/3/17/4bc96d0f-bf05-4982-8db7-3f765e4e60fc1615972646829CarltonLondonGold-PlatedLayeredNecklace1.jpg",
+    },
+    {
+      name: "Rose Gold Plated Layered Necklace",
+      mrp: 9999,
+      discount:70,
+      rating:4.2,
+      img: "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/14868514/2021/9/2/6d157b5c-5edb-426a-89ba-6ecd8c6efaf51630555169903-Jewels-Galaxy-Gold--Rose-Gold-Plated-Layered-Necklace-Set-Of-1.jpg",
+    },
+    {
+      name: "Baby Pink colour top by attitude jeans",
+      mrp: 700,
+      discount:15,
+      rating:4.1,
+      img: "https://cdn.shopclues.com/images1/thumbnails/114879/320/1/152573973-114879329-1627716233.jpg",
+    },
+    {
+      name: "Jhumka's by Rose Gold",
+      mrp: 1347,
+      discount:25,
+      rating:4.6,
+      img: "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/12/16/832de1e6-2166-4fc3-9ff7-ae558ab53a2a1608123835571-1.jpg",
+    },
+    {
+      name: "Indiforce Women Heel's Sandal",
+      mrp: 9999,
+      discount:90,
+      rating:4.4,
+      img: "https://cdn.shopclues.com/images/thumbnails/84718/320/1/118658108Y4A23031506065239.jpg",
+    },
+    {
+      name: "Gold Toned Beautiful Necklace",
+      mrp: 2000,
+      discount:50,
+      rating:4,
+      img: "https://cdn.shopclues.com/images1/thumbnails/104713/320/1/148929772-104713541-1580294626.jpg",
+    },
+    {
+      name: "Women's Gray Friend's Raglan Top",
+      mrp: 534,
+      discount:10,
+      rating:4.7,
+      img: "https://cdn.shopclues.com/images1/thumbnails/114507/320/1/152433686-114507260-1624711661.jpg",
+    },
+    {
+      name: "Funku Fashion Women Tan Sandal",
+      mrp: 999,
+      discount:40,
+      rating:3.6,
+      img: "https://cdn.shopclues.com/images/thumbnails/83606/320/1/127711873FFD1060TanA1505203530.jpg",
+    },
+    {
+      name: "ADS foundation With Sketch Pen Eyeliner",
+      mrp: 399,
+      discount:65,
+      rating:3.2,
+      img:"https://cdn.shopclues.com/images/thumbnails/86636/280/1/130047783129412073122344629foundationwithsketchpeneyeliner1502adsoriginalimaesan48kygunan149892824015069620201508758489.jpg"
+    },
+    {name: "Ft Strip Shoulder Bottle Green Women Dress",
+      mrp: "799",
+      discount:47,
+      rating:4.5,
+      img:"https://cdn.shopclues.com/images1/thumbnails/114532/320/1/152445146-114532471-1625127186.jpg"
+    },
+    { name: "Code Yellow Women'S Brown Handbag",
+      mrp: 1249,
+      discount:69,
+      rating:4.6,
+      img:"https://cdn.shopclues.com/images1/thumbnails/90739/320/1/140118414-90739454-1533113817.jpg"
+      },
+      { name: "Code Yellow Gold Round Dial Diamond Watch",
+      mrp: 1599,
+      discount:85,
+      rating:4.1,
+      img:"https://cdn.shopclues.com/images/thumbnails/89262/320/1/13182996098726095945407889089954087750699842123388365975278919312769856545551423129818143082082414342209351446057623144818660814550844561460537080146632446914754940751512891811.jpg"
+      },
+      { name: "Women's Blue Clutch",
+      mrp: 1999,
+      discount:84,
+      rating:4.8,
+      img:"https://cdn.shopclues.com/images1/thumbnails/90739/320/1/140118422-90739475-1533113844.jpg"
+      },
+      { name: "Good Girl Perfume(Carolenna herrara)",
+      mrp: 1999,
+      discount:89,
+      rating:3.5,
+      img:"https://cdn.shopclues.com/images1/thumbnails/105177/320/1/149104575-105177438-1582197699.jpg"
+      },]; // put all women data here
+
+let homeData = [
+ {
+  img:"https://cdn.shopclues.com/images/thumbnails/16112/280/1/762895344303r114264124041429602514.jpg",
+  name:"Snack Plates-Incrizma Triangular Snack Plates 4 Pc - Red/White",
+  mrp:399,
+  discount:21,
+  rating:5,
+  },
+  {
+  img:"https://cdn.shopclues.com/images1/thumbnails/112091/280/1/151483616-112091395-1606811542.jpg",
+  name:"Happy Home 28 Pcs Premium Dinner Set",
+  mrp:1999,
+  discount:52,
+  rating:4,
+  },
+  {
+  img:"https://cdn.shopclues.com/images1/thumbnails/113778/280/1/152208334-113778486-1618651357.jpg",
+  name:"Lazywindow Portable Blender USB Juicer with Charger",
+  mrp:1500,
+  discount:63,
+  rating:3.6,
+  },
+  {
+  img:"https://cdn.shopclues.com/images1/thumbnails/113508/280/1/152122339-113508156-1616751774.jpg",
+  name:"Foldable Electric Travel Kettle Dual Voltage Food Grade Silicone 0.6 Litre",
+  mrp:999,
+  discount:35,
+  rating:2.8,
+  },
+  {
+  img:"https://cdn.shopclues.com/images/thumbnails/86626/280/1/130041918LLSM114TMain1508747128.png",
+  name:"Lifelong LLSM114T (750Watt) - 4 Slice sandwich maker (Black)",
+  mrp:900,
+  discount:11,
+  rating:1,
+  },
+  {
+  img:"https://cdn.shopclues.com/images1/thumbnails/102411/280/1/147566079-102411213-1566202843.jpg",
+  name:"Philips HL1655/00 250 W Hand Blender (White, Blue)",
+  mrp:1995,
+  discount:30,
+  rating:1.5,
+  },
+  {
+  img:"https://cdn.shopclues.com/images/thumbnails/88687/280/1/131315901carp0271512176772.jpg",
+  name:"Manvi Creations New Floral Chenille Carpet",
+  mrp:1499,
+  discount:62,
+  rating:3,
+  },
+  {
+  img:"https://cdn.shopclues.com/images/thumbnails/27515/280/1/KIDSRUGGREENROAD11448430807.jpg",
+  name:"Taba Kids Carpet 35 Feet Kidsruggreenroad",
+  mrp:1729,
+  discount:52,
+  rating:4.8,
+  },
+  {
+  img:"https://cdn.shopclues.com/images1/thumbnails/107459/280/1/149946870-107459626-1591262555.jpg",
+  name:"D S INTER Automatic Touchless Sensor/ Hands-Free Magic Soap Dispenser",
+  mrp:3999,
+  discount:86,
+  rating:4,
+  },
+  {
+  img:"https://cdn.shopclues.com/images/thumbnails/69901/280/1/118407022118407022AT130zpsonor34zi14718178711493659379.jpg",
+  name:"Allen Key",
+  mrp:599,
+  discount:53,
+  rating:2.9,
+  },
+  {
+  img:"https://cdn.shopclues.com/images1/thumbnails/112467/280/1/151665419-112467186-1608213745.jpg",
+  name:"Rotary Tool DIE Grinder KIT 163 Pieces Accessory KIT for Precision Work Rotary Tool KIT DIE Grinder",
+  mrp:5999,
+  discount:40,
+  rating:3.3,
+  },
+  {
+  img:"https://cdn.shopclues.com/images1/thumbnails/114612/280/1/152494337-114612401-1625735532.jpg",
+  name:"Mapon All Purpose Magic Towel For Home, Kitchen and Outdoor Usage",
+  mrp:599,
+  discount:78,
+  rating:1,
+  },
+  {
+  img:"https://cdn.shopclues.com/images/thumbnails/50333/280/1/TorinoCreativeShotWenge14748739941482507938.png",
+  name:"INTEX STYLES - TORINO BED (QUEEN SIZE WENGE COLORED)",
+  mrp:20999,
+  discount:25,
+  rating:2.2,
+  },
+  {
+  img:"https://cdn.shopclues.com/images/thumbnails/30532/200/200/GGWMR1zpsndpwkmqe1453116797.jpg",
+  name:"Wall Mountable Pot(2 pcs)",
+  mrp:700,
+  discount:86,
+  rating:4.7,
+  },
+  {
+  img:"https://cdn.shopclues.com/images1/thumbnails/113296/280/1/152030491-113296221-1614159241.jpg",
+  name:"Home Berry XXXL Tear Drop Bean Bag Cover (Without Beans) (Green)",
+  mrp:1799,
+  discount:63,
+  rating:5,
+  },
+  {
+  img:"https://cdn.shopclues.com/images/banners/Work/widgetClp/garden/Garden_Lights.jpg",
+  name:"Apex Gardening Lights(Set of 4)",
+  mrp:1837,
+  discount:40,
+  rating:2.5,
+  },
+  {
+  img:"https://cdn.shopclues.com/images1/thumbnails/114612/280/1/152494326-114612371-1628176995.jpg",
+  name:"Ghar Kraft Hexagon 13 Golden Acrylic Mirror Wall Stickers",
+  mrp:499,
+  discount:66,
+  rating:3.9,
+  },
+  {
+  img:"https://cdn.shopclues.com/images1/thumbnails/103682/280/1/148317870-103682572-1574147395.jpg",
+  name:"1 Walltola PVC Tree Branches With Leaves Vinyl Wall Sticker",
+  mrp:599,
+  discount:81,
+  rating:3,
+  },
+  {
+  img:"https://cdn.shopclues.com/images1/thumbnails/96771/280/1/143546322-96771351-1549542127.jpg",
+  name:"Choco More Digital Print Curtain pack of 1 ",
+  mrp:699,
+  discount:72,
+  rating:4.1,
+  },
+];
+
+let menData=[{name:"Pause Olive Solid Shawl Collar Cardigan",
+mrp:"1099",
+discount:"52",
+rating:"3",
+img:"https://cdn.shopclues.com/images1/thumbnails/103065/320/1/147976958-103065391-1587804134.jpg"},
+{name:"Veirdo Men's Maroon V-Neck T-shirt",
+mrp:"999",
+discount:"73",
+rating:"4.0",
+img:"https://cdn.shopclues.com/images/thumbnails/86292/200/200/129791864TSHV26BLKMRNCopy1507883025.jpg"},
+{name:"Stylogue Olive Printed Half Sleeves T-Shirt",
+mrp:"299",
+discount:"40",
+rating:"3.2",
+img:"https://cdn.shopclues.com/images1/thumbnails/114435/160/160/152402990-114435286-1623836440.jpg"},
+{name:"PE Men's Brown Long Sleeve Regular Fit T-Shirt",
+mrp:"1999",
+discount:"67",
+rating:"4.2",
+img:"https://cdn.shopclues.com/images1/thumbnails/79269/320/320/134551427-79269186-1560489876.jpg"},
+{name:"Pause Black Stylish hand Zip Bomby Winter Jacket ",
+mrp:"1499",
+discount:"63",
+rating:"3.9",
+img:"https://cdn.shopclues.com/images1/thumbnails/115272/320/1/150739973-115272207-1631620898.jpg"},
+{name:"Woakers Men's White-Orange Sneakers",
+mrp:"899",
+discount:"41",
+rating:"4.0",
+img:"https://cdn.shopclues.com/images1/thumbnails/111789/320/1/151324271-111789356-1608656401.jpg"},
+{name:"NIKE AIR MAX 2020 BLACK RUNING SHOES",
+mrp:"15995",
+discount:"87",
+rating:"4.4",
+img:"https://cdn.shopclues.com/images1/thumbnails/105345/280/1/149172856-105345517-1583313897.jpg"},
+{name:"Fashlook Men White Block Sky Blue Slim Fit Casual Shirt",
+mrp:"3295",
+discount:"83",
+rating:"4.6",
+img:"https://cdn.shopclues.com/images1/thumbnails/107050/160/160/149812588-107050856-1590565042.jpg"},
+{name:"Lee Peeter Men's Tan Patent Formal Shoe",
+mrp:"1999",
+discount:"72",
+rating:"4.1",
+img:"https://cdn.shopclues.com/images1/thumbnails/90035/320/1/139855539-90035166-1531377013.jpg"},
+{name:"LeatherRetail White Spanish Faux Leather Jacket For Man",
+mrp:"4999",
+discount:"65",
+rating:"3.5",
+img:"https://cdn.shopclues.com/images1/thumbnails/91593/320/1/140445912-91593353-1535448217.jpg"},
+{name:"Stylogue Round Neck Half Sleeve T-shirt For Men",
+mrp:"699",
+discount:"70",
+rating:"3.7",
+img:"https://cdn.shopclues.com/images1/thumbnails/108959/280/1/150492191-108959097-1609164011.jpg"},
+{name:"Trendyz Men White Cotton Hooded Tshirt",
+mrp:"1299",
+discount:"56",
+rating:"4.3",
+img:"https://cdn.shopclues.com/images1/thumbnails/105344/320/1/149172711-105344979-1600845832.jpg"},
+{name:"Mishor Men Grey Plain Hooded Sweatshirt",
+mrp:"1499",
+discount:"53",
+rating:"4.7",
+img:"https://cdn.shopclues.com/images1/thumbnails/112932/320/320/151886403-112932676-1610972024.jpg"},
+{name:"FrionKandy Cotton Block Print Shirt",
+mrp:"1399",
+discount:"70",
+rating:"4.2",
+img:"https://cdn.shopclues.com/images1/thumbnails/110878/280/1/151050227-110878355-1602037025.jpg"},
+{name:"Men's White Black Round Neck Color Block T-Shirt",
+mrp:"399",
+discount:"30",
+rating:"4.0",
+img:"https://cdn.shopclues.com/images1/thumbnails/101924/280/1/147322523-101924415-1563454231.jpg"},]; // put all men data here
+
+for(var i=0;i<15;i++){
+    filterableData.push(mobileData[i]);
+    filterableData.push(menData[i]);
+    filterableData.push(womenData[i]);
+    filterableData.push(homeData[i]);
+
+}
+function show(el){
+parent.innerHTML="";
+fiterableData=el;
+  el.forEach(function(product){
+  let div= document.createElement("div");
+  let img = document.createElement("img");
+  img.src=product.img;
+  let product_price = document.createElement("p");
+ // Three types of price current total paybel
+ let exprice=document.createElement("span");
+  let totalprice=document.createElement("span");
+  let currprice=document.createElement("span");
+
+  currprice.textContent="₹"+product.mrp;
+  var total=Math.ceil(((product.mrp/(100-product.discount))*100));
+  totalprice.textContent="₹"+total;
+  var exdiscount=Math.ceil(total*(product.discount/2))/100
+  exprice.textContent="ex ₹"+Math.ceil(total-exdiscount);
+  totalprice.style.textDecorationLine="line-through"
+  exprice.style.textDecorationLine="line-through"
+  product_price.append(exprice,totalprice,currprice);
+  let product_name = document.createElement("p");
+  product_name.textContent=product.name;
+  let product_discount = document.createElement("p");
+  product_discount.textContent=product.discount+" % "+"off";
+  product_discount.style.color="#24A3B5"
+  product_discount.style.fontSize="20px"
+  let product_rating = document.createElement("p");
+  product_rating.textContent=product.rating+" "+"⭐";
+  let addToCart_btn = document.createElement("button");
+  addToCart_btn.innerText="Add To Cart";
+  addToCart_btn.style.backgroundColor="#24A3B5";
+  addToCart_btn.style.padding="3px";
+  addToCart_btn.style.color="white";
+  addToCart_btn.style.marginLeft="10px";
+  addToCart_btn.onclick=function(){addToCrt(product);}
+  let addto_wish = document.createElement("button");
+  addto_wish.innerText="Add To Wishlist";
+  addto_wish.style.padding="3px";
+  addto_wish.style.backgroundColor="#e73a05";
+  addto_wish.style.color="white";
+  
+  addto_wish.onclick=function(){addToWishList(product);}
+  div.append(img,product_rating,product_name,product_price,product_discount,addto_wish, addToCart_btn);
+  parent.append(div);
+
+  product_name.onclick=function(){
+        product_directto(product);
+      }
+});  
+}
+show(filterableData);
+if(localStorage.getItem("wishList")===null){
+    localStorage.setItem("wishList",JSON.stringify([]));
+}
+function addToWishList(p){
+    let product_cart=JSON.parse(localStorage.getItem("wishList"));
+    var check=true;
+    for(var i=0;i<product_cart.length;i++){
+        if(product_cart[i].name==p.name){
+            check=false;
+            break;
+        }
+    }
+    if(check){
+    product_cart.push(p);
+    alert("Added to Cart");    
+}else
+    {alert("Added to Cart"); 
+
+    }
+    localStorage.setItem("wishList",JSON.stringify(product_cart));
+}
+
+if(localStorage.getItem("cart")===null){
+    localStorage.setItem("cart",JSON.stringify([]));
+}
+function addToCrt(p){
+    let product_cart=JSON.parse(localStorage.getItem("cart"));
+    var check=true;
+    for(var i=0;i<product_cart.length;i++){
+        if(product_cart[i].name==p.name){
+            check=false;
+            break;
+        }
+    }
+    if(check){
+        p.count=1;
+        product_cart.push(p);
+        alert("Added to Cart");
+    }
+    else
+   {
+    alert("Added to Cart");
+   }
+    localStorage.setItem("cart",JSON.stringify(product_cart));
+}
+
+function search()
+    {
+     var searchable_item=[];
+     var n=document.getElementById("search_item");
+     var ser=n.value;
+     for(var j=0;j<filterableData.length;j++)
+     {
+        var data_1=filterableData[j].name.trim().split(" ");
+        for(var z=0;z<data_1.length;z++)
+        {
+         if(ser==data_1[z])
+         {
+             searchable_item.push(filterableData[j]);
+         }
+        }
+     }
+     if(searchable_item.length!=0)
+     {
+    show(searchable_item);
+     }
+     else{
+         alert("Sorry! Product not Found");
+         show(filterableData);
+     }
+    }
+
+    const btnScrollToTop=document.querySelector("#btnScrollToTop");
+
+    btnScrollToTop.addEventListener("click",function(){
+        window.scrollTo({
+            top:0,
+            left:0,
+            behavior:"smooth"
+        });
+    });
+
+    function product_directto(product){
+   localStorage.setItem("productToShow",JSON.stringify([]));  
+   let product_toShow=JSON.parse(localStorage.getItem("productToShow"));
+
+   product_toShow.push(product);
+
+    localStorage.setItem("productToShow",JSON.stringify(product_toShow));
+  
+    window.location.href="productshowing.html";
+
+  }
+
+</script>

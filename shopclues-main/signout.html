@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Out</title>
+    <style>
+        *{
+            font-family: 'Roboto', sans-serif;
+        }        
+        body{
+            background-color: whitesmoke;
+            color:#1A237E;          
+        }
+        #upmsg{
+           text-align: center;
+           color:rgb(107, 55, 55);
+        }
+        #delData{
+            width:400px;
+            border:1px solid #24a3b5;
+            margin:auto;
+            background-color: #24a3b5;
+            border-radius:10px;
+            padding:4%;
+        }
+        #sbt2{
+            background-color: #FF5722;
+            color:white;
+            border:1px solid #FF5722;
+            font-weight: bolder;
+            font-size:smaller;
+            width:150px;
+            padding:0.8%;
+            border-radius: 5px;            
+        }
+        #pass{
+            width:230px;
+        }       
+    </style>
+</head>
+<body>
+    <h2 id="upmsg"> Missing you Already </h2>    
+    <div id="delData">  
+    <form >
+    <input id="pass" type="password" placeholder="Enter your password"></input>
+    <button id="sbt2" onclick="delTheData()">Submit</button>
+    </div>      
+    </form>
+    <script>
+    let delData= JSON.parse(localStorage.getItem("activeUser"));
+    
+    let firstmsg=document.getElementById("upmsg");
+    firstmsg.textContent+="😢😢😢"+delData[0].username;
+
+ 
+    var countforErr=0;
+
+    
+    function delTheData(){
+    let enteredpass=document.getElementById("pass").value;    
+    
+    if(enteredpass!=""){
+    if(enteredpass==delData[0].Password){
+    localStorage.removeItem("activeUser");
+    alert("Sign Out Successful"); 
+    var arr=[];
+    localStorage.setItem("myOrders",JSON.stringify(arr));
+    localStorage.setItem("cart", JSON.stringify(arr));
+    localStorage.setItem("wishList", JSON.stringify(arr));
+
+    window.open("frontpage.html"); 
+
+    } 
+    else {
+        alert("Wrong Password");
+    }
+    }
+    else{
+        countforErr++;
+        if(countforErr==delData.length){
+        alert("Please enter your password");
+        }
+    }
+}
+    </script>
+</body>
+</html>
